@@ -5,6 +5,7 @@ import { getLocale } from '@/cache/cacheLocale'
 import type { DictionaryNamespace, Dictionary } from '@/types/dictionaryTypes'
 import type { Locale } from '@/types/locale'
 import { tAbstract, TParams } from './tAbstract'
+import i18Config from '~/i18.config'
 
 const getOrFetchDictionary = async (
   namespace: DictionaryNamespace,
@@ -34,14 +35,22 @@ const getOrFetchDictionary = async (
 /**
  * Build a translate function bound to a namespace + locale (server only).
  * @param namespace Dictionary namespace to load.
- * @param locale Optional locale override (defaults to cached locale).
+ * @param supportedLocales Optional explicit locales list (defaults to all locales)
  * @returns Translator function taking (key, values?).
  */
-export const getT = async (namespace: DictionaryNamespace, locale: Locale = getLocale()) => {
+export const getT = async (
+  namespace: DictionaryNamespace,
+  supportedLocales: readonly Locale[] = i18Config.locales) => {
+  const routeLocale = getLocale() 
+  const locale = supportedLocales.includes(routeLocale) 
+    ? routeLocale
+    : supportedLocales[0]
+
   if (!locale) {
     throw new Error('Locale is not set, is root layout wrapped `withLocalization`?')
   }
 
+  console.warn('Locale getT()', locale, namespace, supportedLocales)
   const dictionary = await getOrFetchDictionary(namespace, locale)
 
   return (...args: TParams) => tAbstract(dictionary, ...args)

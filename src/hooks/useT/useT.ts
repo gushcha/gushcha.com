@@ -22,7 +22,7 @@ const constructT = (dictionary?: Dictionary | Promise<Dictionary>) => {
  * React hook returning a translator and loading flag for a namespace.
  * Fetches and caches dictionaries; returns noop translator while loading.
  * @param namespace Dictionary namespace.
- * @param forcedLocale Optional explicit locale (defaults to route locale).
+ * @param supportedLocales Optional explicit locales list (defaults to all locales).
  * @returns Object with translator function t and isLoading boolean.
  */
 export const useT = (
