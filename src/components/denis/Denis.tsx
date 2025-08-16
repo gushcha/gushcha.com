@@ -1,5 +1,6 @@
 'use server'
 import React from 'react';
+import LocalizedLink from '@/components/shared/localizedLink/LocalizedLink';
 
 export const Denis: React.FC = async () => {
   const interests = ['TypeScript', 'React', 'Performance', 'DX', 'Clean Architecture'];
@@ -43,6 +44,7 @@ export const Denis: React.FC = async () => {
       ))}
       </ul>
       </div>
+      <LocalizedLink href='/family'>Family</LocalizedLink>
       <div
         aria-label="Decorative gradient square"
         className="mt-6 w-[100px] h-[100px] bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-rose-500 shadow-sm"

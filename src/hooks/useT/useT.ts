@@ -6,8 +6,7 @@ import type { DictionaryNamespace, Dictionary } from '@/types/dictionaryTypes'
 import type { Locale } from '@/types/locale'
 import { tAbstract, TParams } from './tAbstract'
 import { fetchDictionary } from '@/hooks/useT/fetchDictionary'
-import { useParams } from 'next/navigation'
-import i18Config from '~/i18.config'
+import { useChosenLocale } from '@/hooks/useChosenLocale/useChosenLocale'
 
 const NOOP_T = () => '' as ReturnType<typeof tAbstract>
 
@@ -27,13 +26,11 @@ const constructT = (dictionary?: Dictionary | Promise<Dictionary>) => {
  */
 export const useT = (
   namespace: DictionaryNamespace,
-  supportedLocales: readonly Locale[] = i18Config.locales
+  supportedLocales: readonly Locale[]
 ) => {
-  const { locale: routeLocale } = useParams<{ locale: Locale }>()
   const [dictionariesMap, pushDictionary] = useContext(ContextDictionary)
   const requestKeyGuard = useRef<string>('')
-
-  const locale = supportedLocales.includes(routeLocale) ? routeLocale: supportedLocales[0]
+  const locale = useChosenLocale(supportedLocales)
   const providedDictionary = dictionariesMap[locale]?.[namespace]
 
   useEffect(() => {
