@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
-import { Locale } from '../../../types/locale'
+import { Locale } from '@/constants/locales'
 import { useChosenLocale } from '@/hooks/useChosenLocale/useChosenLocale'
 
 type LocalizedLinkProps = React.ComponentProps<typeof Link> & {

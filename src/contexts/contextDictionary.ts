@@ -1,7 +1,7 @@
 import { createContext } from 'react'
 
 import type { DictionariesMap, DictionaryNamespace, Dictionary } from '@/types/dictionaryTypes'
-import type { Locale } from '@/types/locale'
+import type { Locale } from '@/constants/locales'
 
 /**
  * Function signature for adding or updating a dictionary in the context map.

@@ -1,5 +1,5 @@
 import type { Dictionary, DictionaryNamespace } from '@/types/dictionaryTypes'
-import type { Locale } from '@/types/locale'
+import type { Locale } from '@/constants/locales'
 
 export const fetchDictionary = async (
   namespace: DictionaryNamespace,

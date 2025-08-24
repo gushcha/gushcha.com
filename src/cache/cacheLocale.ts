@@ -1,5 +1,5 @@
 import { cache } from 'react'
-import type { Locale } from '@/types/locale'
+import type { Locale } from '@/constants/locales'
 
 function getLocaleCache() {
   return { locale: undefined as Locale | undefined }

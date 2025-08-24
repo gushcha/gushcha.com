@@ -1,6 +1,6 @@
 import React from 'react'
 import { setLocale } from '@/cache/cacheLocale'
-import { isLocale } from '@/types/locale'
+import { isLocale } from '@/constants/locales'
 import { PageWithLocale, PageWithLocaleProps } from '@/types/PageWithLocale'
 
 /**
