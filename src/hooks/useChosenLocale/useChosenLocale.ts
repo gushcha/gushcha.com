@@ -1,12 +1,14 @@
 import { useParams } from 'next/navigation'
 
-import { Locale } from '@/types/locale'
-import i18Config from '~/i18.config'
+import { Locale } from '@/constants/locales'
 
 export const useChosenLocale = (
-  supportedLocales :readonly Locale[] = i18Config.locales
+  supportedLocales? :readonly Locale[]
 ): Locale => {
   const { locale: routeLocale } = useParams<{ locale: Locale }>()
+  if(!supportedLocales) {
+    return routeLocale
+  }
   return (supportedLocales).includes(routeLocale) 
     ? routeLocale
     : supportedLocales[0]

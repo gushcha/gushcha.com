@@ -3,7 +3,7 @@
 import ContextDictionary from '@/contexts/contextDictionary'
 import { useMemo, useContext, useEffect, useRef } from 'react'
 import type { DictionaryNamespace, Dictionary } from '@/types/dictionaryTypes'
-import type { Locale } from '@/types/locale'
+import type { Locale } from '@/constants/locales'
 import { tAbstract, TParams } from './tAbstract'
 import { fetchDictionary } from '@/hooks/useT/fetchDictionary'
 import { useChosenLocale } from '@/hooks/useChosenLocale/useChosenLocale'

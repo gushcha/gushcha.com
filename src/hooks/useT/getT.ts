@@ -3,9 +3,8 @@ import { fetchDictionary } from '@/hooks/useT/fetchDictionary'
 import { getDictionary, pushDictionary } from '@/cache/cacheDictionary'
 import { getLocale } from '@/cache/cacheLocale'
 import type { DictionaryNamespace, Dictionary } from '@/types/dictionaryTypes'
-import type { Locale } from '@/types/locale'
+import { type Locale, allLocales } from '@/constants/locales'
 import { tAbstract, TParams } from './tAbstract'
-import i18Config from '~/i18.config'
 
 const getOrFetchDictionary = async (
   namespace: DictionaryNamespace,
@@ -40,9 +39,10 @@ const getOrFetchDictionary = async (
  */
 export const getT = async (
   namespace: DictionaryNamespace,
-  supportedLocales: readonly Locale[] = i18Config.locales) => {
+  supportedLocales?: readonly Locale[]) => {
   const routeLocale = getLocale() 
-  const locale = supportedLocales.includes(routeLocale) 
+  
+  const locale = !supportedLocales || supportedLocales.includes(routeLocale) 
     ? routeLocale
     : supportedLocales[0]
 
@@ -50,7 +50,7 @@ export const getT = async (
     throw new Error('Locale is not set, is root layout wrapped `withLocalization`?')
   }
 
-  console.warn('Locale getT()', locale, namespace, supportedLocales)
+  console.log('Locale getT()', locale, namespace, supportedLocales)
   const dictionary = await getOrFetchDictionary(namespace, locale)
 
   return (...args: TParams) => tAbstract(dictionary, ...args)

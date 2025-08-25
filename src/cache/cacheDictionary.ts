@@ -1,6 +1,6 @@
 import { cache } from 'react'
 import type { Dictionary, DictionaryNamespace, DictionariesMap } from '@/types/dictionaryTypes'
-import type { Locale } from '@/types/locale'
+import type { Locale } from '@/constants/locales'
 
 function getDictionaryCache() {
   return { dictionaries: {} as DictionariesMap }
