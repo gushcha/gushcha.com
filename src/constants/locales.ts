@@ -1,9 +1,9 @@
 import { Member } from './members'
 
 const localesByParticularMember = {
-  denis: ['en', 'ru', 'el'],
-  grigory: ['en', 'ru']
-} as const
+  denis: ['en', 'ru', 'el'] as ['en', 'ru', 'el'],
+  grigory: ['en', 'ru'] as ['en', 'ru']
+}
 
 export type Locale = typeof localesByParticularMember[
   keyof typeof localesByParticularMember
@@ -15,7 +15,7 @@ export const allLocales: Locale[] = Array.from(
   )
 )
 
-export const localesByMember: Record<Member, ReadonlyArray<Locale>> = {
+export const localesByMember: Record<Member, Locale[]> = {
   ...localesByParticularMember,
   'family': allLocales,
 }
@@ -27,5 +27,5 @@ export const localesByMember: Record<Member, ReadonlyArray<Locale>> = {
  * @returns True if value is a supported locale.
  */
 export function isLocale(value: unknown): value is Locale {
-  return typeof value === 'string' && (allLocales as readonly string[]).includes(value)
+  return typeof value === 'string' && (allLocales as string[]).includes(value)
 }

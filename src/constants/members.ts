@@ -2,10 +2,14 @@ export const MEMBERS = [
   'denis',
   'grigory',
   'family',
-] as const
+] as [
+  'denis',
+  'grigory',
+  'family',
+]
 
 export type Member = typeof MEMBERS[number]
 
 export function isMember(value: unknown): value is Member {
-  return typeof value === 'string' && (MEMBERS as readonly string[]).includes(value)
+  return typeof value === 'string' && (MEMBERS as string[]).includes(value)
 }

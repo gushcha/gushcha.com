@@ -22,7 +22,7 @@ const hostMemberMatcher = new RegExp(
 function getRequestLocaleParams (req: NextRequest):RequestLocaleParams {
   const [,,
     reqLocale,
-    reqPathNameWithoutLocale,
+    reqPathNameWithoutLocale,,
     reqMember,
   ] = req.nextUrl.pathname.match(localeParamsMatcher) || []
   const [
@@ -37,7 +37,7 @@ function getRequestLocaleParams (req: NextRequest):RequestLocaleParams {
   }
 }
 
-function suggestLocale(req: NextRequest, availableLocales: readonly Locale[]) {
+function suggestLocale(req: NextRequest, availableLocales: Locale[]) {
   const headersObject = Object.fromEntries(req.headers.entries())
   const languages = new Negotiator({ headers: headersObject }).languages()
   return match(languages, [...availableLocales], availableLocales[0])
@@ -64,21 +64,21 @@ export function middleware(req: NextRequest) {
 export const config = {
   matcher: [
     {
-      source: '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|\.well-known).*)',
+      source: '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|assets|\.well-known).*)',
       missing: [
         { type: 'header', key: 'next-router-prefetch' },
         { type: 'header', key: 'purpose', value: 'prefetch' }
       ]
     },
     {
-      source: '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|\.well-known).*)',
+      source: '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|assets|\.well-known).*)',
       has: [
         { type: 'header', key: 'next-router-prefetch' },
         { type: 'header', key: 'purpose', value: 'prefetch' }
       ]
     },
     {
-      source: '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|\.well-known).*)',
+      source: '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|assets|\.well-known).*)',
       has: [{ type: 'header', key: 'x-present' }],
       missing: [{ type: 'header', key: 'x-missing', value: 'prefetch' }]
     },

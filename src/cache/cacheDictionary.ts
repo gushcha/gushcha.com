@@ -2,9 +2,14 @@ import { cache } from 'react'
 import type { Dictionary, DictionaryNamespace, DictionariesMap } from '@/types/dictionaryTypes'
 import type { Locale } from '@/constants/locales'
 
-function getDictionaryCache() {
+function getDictionaryObject() {
   return { dictionaries: {} as DictionariesMap }
 }
+
+const getDictionaryCache = cache(getDictionaryObject)
+
+// TODO rewrite using memoized function that caches the promise
+// issue https://github.com/gushcha/gushcha.com/issues/8
 
 /**
  * Retrieve dictionary (or promise) for locale + namespace if present.
@@ -16,7 +21,7 @@ export const getDictionary = (
   locale: Locale,
   namespace: DictionaryNamespace
 ): Dictionary | Promise<Dictionary> | undefined => {
-  const { dictionaries } = cache(getDictionaryCache)()
+  const { dictionaries } = getDictionaryCache()
   return dictionaries[locale]?.[namespace]
 }
 
@@ -31,7 +36,7 @@ export const pushDictionary = (
   namespace: DictionaryNamespace,
   dictionary: Dictionary | Promise<Dictionary>
 ): void => {
-  const { dictionaries } = cache(getDictionaryCache)()
+  const { dictionaries } = getDictionaryCache()
   dictionaries[locale] = {
     ...dictionaries[locale],
     [namespace]: dictionary

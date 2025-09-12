@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.6.1",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/string-template": "^1.0.7",
     "negotiator": "^1.0.0",
     "next": "15.4.6",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-markdown": "^10.1.0",
     "string-template": "^1.0.0"
   },
   "devDependencies": {

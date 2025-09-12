@@ -14,10 +14,8 @@ const BackgroundTransitioner: React.FC = () => {
     ) {
       setPathLevel(currentPathLevel)
       document.body.style.backgroundPosition = `${50*currentPathLevel}vw`
-
-      //debugger
     }
-  }, [currentPathLevel])
+  }, [currentPathLevel, pathLevel])
   return null;
 };
 

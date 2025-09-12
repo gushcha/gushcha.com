@@ -1,9 +1,9 @@
 'use server'
 import { fetchDictionary } from '@/hooks/useT/fetchDictionary'
 import { getDictionary, pushDictionary } from '@/cache/cacheDictionary'
-import { getLocale } from '@/cache/cacheLocale'
+import { chooseLocale } from '@/cache/cacheLocale'
 import type { DictionaryNamespace, Dictionary } from '@/types/dictionaryTypes'
-import { type Locale, allLocales } from '@/constants/locales'
+import { type Locale } from '@/constants/locales'
 import { tAbstract, TParams } from './tAbstract'
 
 const getOrFetchDictionary = async (
@@ -39,12 +39,9 @@ const getOrFetchDictionary = async (
  */
 export const getT = async (
   namespace: DictionaryNamespace,
-  supportedLocales?: readonly Locale[]) => {
-  const routeLocale = getLocale() 
+  supportedLocales?: Locale[]) => {
   
-  const locale = !supportedLocales || supportedLocales.includes(routeLocale) 
-    ? routeLocale
-    : supportedLocales[0]
+  const locale = chooseLocale(supportedLocales)
 
   if (!locale) {
     throw new Error('Locale is not set, is root layout wrapped `withLocalization`?')

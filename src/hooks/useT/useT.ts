@@ -26,7 +26,7 @@ const constructT = (dictionary?: Dictionary | Promise<Dictionary>) => {
  */
 export const useT = (
   namespace: DictionaryNamespace,
-  supportedLocales: readonly Locale[]
+  supportedLocales: Locale[]
 ) => {
   const [dictionariesMap, pushDictionary] = useContext(ContextDictionary)
   const requestKeyGuard = useRef<string>('')

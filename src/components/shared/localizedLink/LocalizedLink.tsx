@@ -6,7 +6,7 @@ import { useChosenLocale } from '@/hooks/useChosenLocale/useChosenLocale'
 
 type LocalizedLinkProps = React.ComponentProps<typeof Link> & {
   href: string
-  supportedLocales?: readonly Locale[]
+  supportedLocales?: Locale[]
 }
 
 const LocalizedLink: React.FC<LocalizedLinkProps> = ({supportedLocales, href, ...props}) => {

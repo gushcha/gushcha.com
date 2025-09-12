@@ -5,8 +5,9 @@ import { getT } from '@/hooks/useT/getT'
 import { PageWithLocale } from '@/types/PageWithLocale'
 import { getLocale } from '@/cache/cacheLocale'
 import { MetadataLayoutProps } from '@/types/MetadataProps'
-import ThemeToggle from '../shared/theme/ThemeToggle'
-import ThemeAntiFlicker from '../shared/theme/ThemeAntiFlicker'
+import ThemeToggle from '@/components/shared/theme/ThemeToggle'
+import ThemeAntiFlicker from '@/components/shared/theme/ThemeAntiFlicker'
+import Head from 'next/head'
 
 
 const geistSans = Geist({
@@ -33,9 +34,9 @@ const FamilyLayout: PageWithLocale<PropsWithChildren> = async ({ children }) => 
   console.log('RENDERING Family LAYOUT')
   return (
     <html lang={getLocale()} suppressHydrationWarning>
-      <head>
+      <Head>
         <ThemeAntiFlicker />
-      </head>
+      </Head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-blue-200 dark:bg-blue-900 text-gray-900 dark:text-gray-100 transition-colors`}> 
         {children}
         <ThemeToggle />
