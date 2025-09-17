@@ -6,7 +6,7 @@ const  getSystemTheme = () => {
     return THEME.light;
   }
   return window.matchMedia(PREFERS_COLOR_THEME_MEDIA_QUERY)
-  .matches 
+    .matches 
     ? THEME.dark 
     : THEME.light
 }
