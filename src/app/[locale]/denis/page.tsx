@@ -3,10 +3,10 @@ import { withLocalization } from '@/components/shared/withLocalization/withLocal
 import { PageWithLocale } from '@/types/PageWithLocale'
 import React from 'react'
 
-const SubPage: PageWithLocale = async () => {
+const DenisPage: PageWithLocale = async () => {
   return (
     <Denis/>
   )
 }
 
-export default withLocalization(SubPage)
+export default withLocalization(DenisPage)

@@ -1,1 +1,1 @@
-export const DICTIONARY_NAMES = ['main', 'metadata'] as const
+export const DICTIONARY_NAMES = ['main', 'metadata', 'cv'] as const
