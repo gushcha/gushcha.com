@@ -1,6 +1,5 @@
 import { PropsWithChildren } from 'react'
 import { Geist, Geist_Mono } from 'next/font/google'
-import Head from 'next/head'
 
 import { getT } from '@/hooks/useT/getT'
 import { PageWithLocale } from '@/types/PageWithLocale'
@@ -33,12 +32,12 @@ const DenisLayout: PageWithLocale<PropsWithChildren> = async ({ children }) => {
   getLocale()
   console.log('RENDERING Denis LAYOUT')
   return (
-    <html lang={getLocale()} suppressHydrationWarning>
-      <Head>
+    <html lang={getLocale()} suppressHydrationWarning className='bg-pink-100 dark:bg-pink-950'>
+      <head>
         <ThemeAntiFlicker />
-      </Head>
+      </head>
       <body
-        className={`${geistSans.className} ${geistMono.className} min-h-screen bg-radial from-fuchsia-500 dark:from-fuchsia-900 from-30% to-pink-500 dark:to-pink-900  dark:text-gray-100 transition-background duration-1000 `}
+        className={`${geistSans.className} ${geistMono.className} min-h-screen bg-radial from-fuchsia-100 dark:from-fuchsia-950 from-30% to-pink-200 dark:to-pink-950  dark:text-gray-100 transition-background duration-1000 `}
       >
         {children}
         <ThemeToggle />
