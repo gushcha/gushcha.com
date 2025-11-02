@@ -13,7 +13,6 @@ import '@/app/globals.css';
 export const generateMetadata = async (
   props: MetadataLayoutProps
 ): Promise<Metadata> => {
-  console.log('RENDERING ROOT METADATA')
 
   const generateMemberMetadata = await getMemberArtifactByHost({
     'family': generateFamilyMetadata,
@@ -25,7 +24,6 @@ export const generateMetadata = async (
 }
 
 const RootLayout: PageWithLocale<PropsWithChildren> = async ({ children, ...props}) => {
-  console.log('RENDERING ROOT LAYOUT')
 
   const MemberLayout = await getMemberArtifactByHost({
     'family': FamilyLayout,
@@ -34,11 +32,11 @@ const RootLayout: PageWithLocale<PropsWithChildren> = async ({ children, ...prop
   })
 
   return (
-    <MemberLayout {...props}>
-      <ContextDictionaryProvider>
+    <ContextDictionaryProvider>
+      <MemberLayout {...props}>
         {children}
-      </ContextDictionaryProvider>
-    </MemberLayout>
+      </MemberLayout>
+    </ContextDictionaryProvider>
   )
 }
 

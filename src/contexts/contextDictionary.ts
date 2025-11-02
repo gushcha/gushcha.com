@@ -17,7 +17,7 @@ export type PushDictionary = (
 ) => void
 
 const unimplementedFunction = () => {
-  throw new Error('Uninitialized contextDictionary, is root layout wrapped `withT`?')
+  throw new Error('Uninitialized contextDictionary, is root layout wrapped `ContextDictionaryProvider`?')
 }
 
 /**
