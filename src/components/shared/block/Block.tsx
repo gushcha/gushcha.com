@@ -9,8 +9,8 @@ interface BlockProps {
 const Block: FC<BlockProps> = ({children, videoSrc, isContrast = false, isWide = false }) => {
   // subtle background with small opacity; hover increases opacity slightly
   const bgClass = isContrast
-    ? 'bg-white/3 dark:bg-white/5'
-    : 'bg-black/3 dark:bg-black/5'
+    ? 'bg-black/3 dark:bg-white/5'
+    : 'bg-white/3 dark:bg-black/5'
 
   const widthClass = isWide ? 'max-w-5xl' : 'max-w-prose'
 

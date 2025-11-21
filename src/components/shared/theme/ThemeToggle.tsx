@@ -56,13 +56,11 @@ const ThemeToggle: FC<ThemeToggleProps> = ({
     <button
       type="button"
       onClick={handleThemeChange}
-      className={`${displayAndPositionClassname} items-center gap-2 rounded-full border border-slate-300 dark:border-slate-600 bg-white/80 dark:bg-slate-800/80 backdrop-blur px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 shadow-sm hover:bg-white dark:hover:bg-slate-800 transition-colors`}
+      className={`${displayAndPositionClassname} justify-center px-3 sm:pl-8 items-center gap-2 rounded-full border border-slate-300 dark:border-slate-600 sm:bg-white/50 sm:dark:bg-slate-800/50 sm:backdrop-blur h-10 min-w-10 text-sm font-medium text-slate-700 dark:text-slate-200 shadow-sm hover:bg-white dark:hover:bg-slate-800 transition-colors`}
       aria-label="Toggle theme"
     >
-      <span className="h-4 w-4 relative">
-        <span className="absolute inset-0 rotate-0 scale-100 dark:scale-0 transition-transform origin-center">☀️</span>
-        <span className="absolute inset-0 scale-0 dark:scale-100 transition-transform origin-center">🌙</span>
-      </span>
+      <span className="absolute sm:left-3 scale-100 dark:scale-0 transition-transform origin-center">☀️</span>
+      <span className="absolute sm:left-3 scale-0 dark:scale-100  transition-transform origin-center">🌙</span>
       {!isMobile && (<span>change</span>)}
     </button>
   );

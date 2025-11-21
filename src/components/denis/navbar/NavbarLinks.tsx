@@ -42,7 +42,7 @@ const NavbarLinks = () => {
               <LocalizedLink
                 key={link.href}
                 href={link.href}
-                className="block px-6 py-4 hover:bg-violet-100 dark:hover:bg-violet-900 transition-colors border-b border-slate-100 dark:border-slate-700 last:border-b-0"
+                className="block px-6 py-4 hover:bg-violet-100 dark:hover:bg-violet-900 transition-colors border-b border-slate-100 dark:border-slate-700 last:border-b-0 no-underline"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}
@@ -58,7 +58,7 @@ const NavbarLinks = () => {
           <LocalizedLink
             key={link.href}
             href={link.href}
-            className="font-medium hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
+            className="font-medium hover:text-violet-600 dark:hover:text-violet-400 transition-colors no-underline"
           >
             {link.label}
           </LocalizedLink>

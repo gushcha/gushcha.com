@@ -34,7 +34,7 @@ const LocaleSelector = () => {
       trigger={
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center gap-2 px-3 py-2 rounded-md bg-violet-100 dark:bg-violet-900 hover:bg-violet-200 dark:hover:bg-violet-800 transition-colors"
+          className="flex items-center gap-2 px-3 h-10 rounded-full border border-slate-300 dark:border-slate-600 bg-white/80 dark:bg-slate-800/80 hover:bg-white dark:hover:bg-slate-800 transition-colors shadow-sm backdrop-blur"
           aria-label="Select language"
         >
           <span className="text-lg">{currentLocaleData.flag}</span>
