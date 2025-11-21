@@ -107,8 +107,8 @@ const CvPage: PageWithLocale = async () => {
             </p>
             <p>
               <strong>{t('product')}</strong>
-              {t('ats_system')} <a href="https://talantix.ru/" target='_blank'>{t('talantix')}</a>{' '}
-              {t('built_within_largest_russian')} <a href='https://hh.ru/' target='_blank'>{t('hh_ru')}</a>
+              {t('ats_system')} <a className="underline" href="https://talantix.ru/" target='_blank'>{t('talantix')}</a>{' '}
+              {t('built_within_largest_russian')} <a className="underline" href='https://hh.ru/' target='_blank'>{t('hh_ru')}</a>
             </p>
             <strong>{t('responsibilities')}</strong>
             <ul className="list-disc list-inside">
@@ -129,7 +129,7 @@ const CvPage: PageWithLocale = async () => {
             </p>
             <p>
               <strong>{t('product')}</strong>{t('official_russian_railway_portal')}{' '}
-              <a href='https://www.rzd.ru' target='_blank'>{t('rzd_ru')}</a>
+              <a className="underline" href='https://www.rzd.ru' target='_blank'>{t('rzd_ru')}</a>
             </p>
             <strong>{t('responsibilities')}</strong>
             <ul className="list-disc list-inside">
