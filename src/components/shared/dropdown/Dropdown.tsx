@@ -9,7 +9,6 @@ interface DropdownProps {
   children: ReactNode
   className?: string
   dropdownClassName?: string
-  position?: 'bottom' | 'top'
   align?: 'left' | 'center' | 'right'
 }
 
@@ -20,7 +19,6 @@ const Dropdown: FC<DropdownProps> = ({
   children,
   className = '',
   dropdownClassName = '',
-  position = 'bottom',
   align = 'left',
 }) => {
   const dropdownRef = useRef<HTMLDivElement>(null)
@@ -43,29 +41,19 @@ const Dropdown: FC<DropdownProps> = ({
     }
   }, [isOpen, onClose])
 
-  const getPositionClasses = () => {
-    const positions = {
-      bottom: 'top-full mt-2',
-      top: 'bottom-full mb-2',
-    }
-    return positions[position]
-  }
-
-  const getAlignmentClasses = () => {
-    const alignments = {
-      left: 'left-0',
-      center: 'left-1/2 -translate-x-1/2',
-      right: 'right-0',
-    }
-    return alignments[align]
-  }
-
   return (
     <div ref={dropdownRef} className={`relative ${className}`}>
       {trigger}
       {isOpen && (
         <div
-          className={`absolute ${getPositionClasses()} ${getAlignmentClasses()} bg-white dark:bg-slate-800 rounded-md shadow-lg border border-slate-200 dark:border-slate-700 z-50 ${dropdownClassName}`}
+          className={`
+            fixed sm:absolute z-50
+
+            w-[100vw] sm:w-auto
+            
+            bg-white/60 dark:bg-slate-900/60 
+            backdrop-blur-sm shadow-lg
+            ${dropdownClassName}`}
         >
           {children}
         </div>

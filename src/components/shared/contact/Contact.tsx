@@ -14,7 +14,7 @@ const Contact: FC<ContactProps> = ({
 }) => {
 
   return (
-    <a href={value} className="pr-4 inline-flex items-center gap-2">
+    <a href={value} className="pr-4 inline-flex items-center gap-2 underline">
       <ContactIcon type={type} /> {children}
     </a>
   )
