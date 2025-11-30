@@ -22,11 +22,15 @@ const NavbarLinks = () => {
 
   return (
     <>
-      {/* Mobile: Dropdown Menu */}
       <div className="sm:hidden">
         <Dropdown
           isOpen={isMenuOpen}
           onClose={() => setIsMenuOpen(false)}
+          dropdownClassName="
+            min-w-[160px]
+            bottom-[64px] right-0
+            sm:bottom-auto
+          "
           trigger={
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -37,18 +41,16 @@ const NavbarLinks = () => {
             </button>
           }
         >
-          <div className="fixed left-0 right-0 bottom-[60px] bg-white dark:bg-slate-800 shadow-lg border-t border-slate-200 dark:border-slate-700 rounded-none border-x-0">
-            {links.map((link) => (
-              <LocalizedLink
-                key={link.href}
-                href={link.href}
-                className="block px-6 py-4 hover:bg-violet-100 dark:hover:bg-violet-900 transition-colors border-b border-slate-100 dark:border-slate-700 last:border-b-0"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {link.label}
-              </LocalizedLink>
-            ))}
-          </div>
+          {links.map((link) => (
+            <LocalizedLink
+              key={link.href}
+              href={link.href}
+              className="block px-6 py-4 hover:bg-violet-100 dark:hover:bg-violet-900 no-underline"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {link.label}
+            </LocalizedLink>
+          ))}
         </Dropdown>
       </div>
 
@@ -58,7 +60,7 @@ const NavbarLinks = () => {
           <LocalizedLink
             key={link.href}
             href={link.href}
-            className="font-medium hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
+            className="font-medium hover:text-violet-600 dark:hover:text-violet-400 transition-colors no-underline"
           >
             {link.label}
           </LocalizedLink>

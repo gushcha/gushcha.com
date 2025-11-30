@@ -13,7 +13,7 @@ const LocalizedLink: React.FC<LocalizedLinkProps> = ({supportedLocales, href, ..
   const locale = useChosenLocale(supportedLocales)
   const localizedHref = `/${locale}/${href}`.replace(/\/{2,}/g, '/')
 
-  return <Link href={localizedHref} {...props} />
+  return <Link className='underline' href={localizedHref} {...props} />
 }
 
 export default LocalizedLink

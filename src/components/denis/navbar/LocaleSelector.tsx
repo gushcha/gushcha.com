@@ -28,25 +28,28 @@ const LocaleSelector = () => {
     <Dropdown
       isOpen={isOpen}
       onClose={() => setIsOpen(false)}
-      position={typeof window !== 'undefined' && window.innerWidth < 640 ? 'top' : 'bottom'}
       align="right"
-      dropdownClassName="min-w-[160px]"
+      dropdownClassName="
+        min-w-[160px]
+        bottom-[64px] right-0
+        sm:bottom-auto
+      "
       trigger={
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center gap-2 px-3 py-2 rounded-md bg-violet-100 dark:bg-violet-900 hover:bg-violet-200 dark:hover:bg-violet-800 transition-colors"
+          className="flex items-center justify-center sm:px-3 gap-2 h-10 min-w-10 rounded-full border border-slate-300 dark:border-slate-600 hover:bg-white dark:hover:bg-slate-800 transition-colors shadow-sm"
           aria-label="Select language"
         >
-          <span className="text-lg">{currentLocaleData.flag}</span>
-          <span className="hidden sm:inline font-medium">{currentLocaleData.code.toUpperCase()}</span>
-          <svg
-            className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+          {!isOpen && <span className="text-lg sm:w-5">{currentLocaleData.flag}</span>}
+          {isOpen && <svg
+            className='w-5 h-4 transition-transform rotate-180 sm:rotate-0'
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
           >
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
+          </svg>}
+          <span className="hidden sm:inline font-medium">{currentLocaleData.code.toUpperCase()}</span>
         </button>
       }
     >
@@ -54,9 +57,13 @@ const LocaleSelector = () => {
         <button
           key={locale.code}
           onClick={() => handleLocaleChange(locale.code)}
-          className={`w-full text-left px-4 py-2 hover:bg-violet-100 dark:hover:bg-violet-900 first:rounded-t-md last:rounded-b-md transition-colors flex items-center gap-2 ${
-            locale.code === currentLocale ? 'bg-violet-50 dark:bg-violet-950' : ''
-          }`}
+          className="
+            w-full px-4 py-2 
+            hover:bg-violet-100 dark:hover:bg-violet-900
+            flex gap-2
+            justify-center
+            sm:justify-start
+          "
         >
           <span className="text-lg">{locale.flag}</span>
           <span className="font-medium">{locale.label}</span>
