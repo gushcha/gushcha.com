@@ -4,7 +4,6 @@ import { getT } from '@/hooks/useT/getT'
 import ArticlePreview from '@/components/shared/articlePreview/ArticlePreview'
 import Block from '@/components/shared/block/Block'
 import Heading from '@/components/shared/heading/Heading'
-import { Locale } from '@/constants/locales'
 import {PREVIEW_REACT_SERVER_CONTEXT} from '@/app/[locale]/denis/blog/react-server-context/previewReactServerContext'
 
 const PageBlog: PageWithLocale = async () => {

@@ -90,14 +90,41 @@ export async function run(args) {
   ensureDir(dictDir)
   let uniqueBase = dictBaseName
   let i = 1
-  while (fs.existsSync(path.join(dictDir, uniqueBase))) {
-    const baseWithoutExt = dictBaseName.replace(/\.en\.js$/i, '')
-    uniqueBase = `${baseWithoutExt}_${i}.en.js`
-    i++
+  const dictPathCandidate = path.join(dictDir, uniqueBase)
+  let dictPath = dictPathCandidate
+  let existingDict = {}
+  if (fs.existsSync(dictPathCandidate)) {
+    // Read and parse existing dictionary
+    try {
+      const existingContent = fs.readFileSync(dictPathCandidate, 'utf8')
+      // Remove export default and parse as object
+      const match = existingContent.match(/export default\s*{([\s\S]*)}/)
+      if (match) {
+        const objStr = '{' + match[1] + '}'
+        existingDict = eval('(' + objStr.replace(/\n/g, '').replace(/\\"/g, '"') + ')')
+      }
+    } catch (e) {
+      console.warn('Could not parse existing dictionary:', e.message)
+    }
+  } else {
+    // If file does not exist, find unique name
+    while (fs.existsSync(path.join(dictDir, uniqueBase))) {
+      const baseWithoutExt = dictBaseName.replace(/\.en\.js$/i, '')
+      uniqueBase = `${baseWithoutExt}_${i}.en.js`
+      i++
+    }
+    dictPath = path.join(dictDir, uniqueBase)
   }
-  const dictPath = path.join(dictDir, uniqueBase)
   dictKeyBase = uniqueBase.replace(/\.en\.js$/i, '').replace(/[^a-z0-9_]/gi, '')
-  const dictEntries = Object.entries(dict).map(([k, v]) => `  \"${k}\": \"${v.replace(/\"/g, '\\\"')}\"`).join(',\n')
+
+  // Merge new keys, avoid duplicates
+  const mergedDict = { ...existingDict }
+  for (const [k, v] of Object.entries(dict)) {
+    if (!(k in mergedDict)) {
+      mergedDict[k] = v
+    }
+  }
+  const dictEntries = Object.entries(mergedDict).map(([k, v]) => `  "${k}": "${v.replace(/"/g, '\\"')}"`).join(',\n')
   const dictFileContent = `export default{\n${dictEntries}\n}\n`
   fs.writeFileSync(dictPath, dictFileContent, 'utf8')
 

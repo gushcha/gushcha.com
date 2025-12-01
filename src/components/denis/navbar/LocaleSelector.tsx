@@ -59,7 +59,8 @@ const LocaleSelector = () => {
           onClick={() => handleLocaleChange(locale.code)}
           className="
             w-full px-4 py-2 
-            hover:bg-violet-100 dark:hover:bg-violet-900
+            hover:bg-violet-100/60 dark:hover:bg-violet-900/60
+            transition-colors
             flex gap-2
             justify-center
             sm:justify-start

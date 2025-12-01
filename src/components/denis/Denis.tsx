@@ -3,25 +3,20 @@ import React from 'react';
 import LocalizedLink from '@/components/shared/localizedLink/LocalizedLink';
 import Block from '@/components/shared/block/Block'
 import Heading from '@/components/shared/heading/Heading'
+import { getT } from '@/hooks/useT/getT'
 
 export const Denis: React.FC = async () => {
+  const t = await getT('denis')
+
   const interests = ['TypeScript', 'React', 'Performance', 'DX', 'Clean Architecture'];
 
   return (
     <main>
       <Block>
-        <Heading level={1} className='text-blue-900 dark:text-blue-200'>Denis Gushcha</Heading>
-        <p className="font-light text-slate-700 dark:text-slate-300">
-          Frontend Developer / Betting Industry
-        </p>
-        <p className="mt-1 text-[0.8rem] tracking-[0.4px] uppercase font-semibold text-slate-400">
-          Limassol
-        </p>
-        <p className="mb-4">
-          I build modern, performant web interfaces with a strong focus on type safety,
-          maintainability, and developer experience. I enjoy refining architectures,
-          optimizing bundles, and elevating UI polish.
-        </p>
+        <Heading level={1} className='text-blue-900 dark:text-blue-200'>{t('denis_gushcha')}</Heading>
+        <p className="font-light text-slate-700 dark:text-slate-300">{t('frontend_developer_betting_industry')}</p>
+        <p className="mt-1 text-[0.8rem] tracking-[0.4px] uppercase font-semibold text-slate-400">{t('limassol')}</p>
+        <p className="mb-4">{t('i_build_modern_performant')}</p>
         <div aria-label="Key interests">
           <ul className="list-none p-0 m-0 flex flex-wrap gap-2">
             {interests.map(tag => (
@@ -36,15 +31,12 @@ export const Denis: React.FC = async () => {
         </div>
       </Block>
       <Block isContrast>
-        <Heading level={2}>Here you can:</Heading>
-        <p>
-          Check out my work experience in my <LocalizedLink href='/denis/cv'>CV</LocalizedLink>.
+        <Heading level={2}>{t('here_you_can')}</Heading>
+        <p>{t('check_out_my_work')}<LocalizedLink href='/denis/cv'>{t('cv')}</LocalizedLink>.
         </p>
-        <p className='mt-4'>
-          Discover my interests in <LocalizedLink href='/denis/blog'>Blog</LocalizedLink>.
+        <p className='mt-4'>{t('discover_my_interests_in')}<LocalizedLink href='/denis/blog'>{t('blog')}</LocalizedLink>.
         </p>
-        <p className='mt-4'>
-          Or if you were looking for a sound engineer with same surname, checkout <LocalizedLink href='/grigory'>my brother&apos;s webpage</LocalizedLink>.
+        <p className='mt-4'>{t('or_if_you_were')}<LocalizedLink href='/grigory'>{t('my_brother_apos_s')}</LocalizedLink>.
         </p>
 
       </Block>

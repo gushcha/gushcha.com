@@ -45,7 +45,11 @@ const NavbarLinks = () => {
             <LocalizedLink
               key={link.href}
               href={link.href}
-              className="block px-6 py-4 hover:bg-violet-100 dark:hover:bg-violet-900 no-underline"
+              className="
+                block px-6 py-4
+                hover:bg-violet-100/60 dark:hover:bg-violet-900/60
+                no-underline 
+                transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               {link.label}
