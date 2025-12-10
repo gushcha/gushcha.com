@@ -1,5 +1,5 @@
 import { cache } from 'react'
-import type { Locale } from '@/constants/locales'
+import { isLocale, type Locale } from '@/constants/locales'
 
 function getLocaleObject() {
   return { locale: undefined as Locale | undefined }
@@ -41,7 +41,10 @@ export const chooseLocale = (supportedLocales?: Locale[]): Locale => {
  * Set locale once; subsequent different values throw.
  * @param locale Locale code to cache.
  */
-export const setLocale = (locale: Locale) => {
+export const setLocale = (locale: unknown | Locale) => {
+  if (!isLocale(locale)) {
+    throw new Error(`Invalid locale: ${locale}`)
+  }
   const localeCache = getLocaleCache()
   localeCache.locale = locale
 }

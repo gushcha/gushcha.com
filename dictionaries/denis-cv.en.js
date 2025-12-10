@@ -80,5 +80,7 @@ export default{
   "contacts": "Contacts",
   "ready_for_relocation": "Ready for relocation.",
   "nine_years_of_total": "{years_from_2012} years of total experience in IT, {years_from_2016} years in web development. Worked with large enterprise projects and with tiny startups.",
-  "denis_gushcha": "Denis Gushcha"
+  "denis_gushcha": "Denis Gushcha",
+  "metadata_title": "Denis Gushcha | Hire frontend team leader",
+  "metadata_description": "CV/Resume of a frontend developer/team leader, with large experience in consumer oriented and B2B products like Payment systems, ticketing systems and many more. Working with ReactJS, NextJs, Vue, NuxtJs, Microfrontends, ",
 }

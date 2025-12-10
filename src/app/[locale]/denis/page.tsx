@@ -1,5 +1,5 @@
 import Denis from '@/components/denis/Denis'
-import { withLocalization } from '@/components/shared/withLocalization/withLocalization'
+import { withLocalizationPage } from '@/components/shared/withLocalization/withLocalizationPage'
 import { PageWithLocale } from '@/types/PageWithLocale'
 import React from 'react'
 
@@ -10,4 +10,4 @@ const DenisPage: PageWithLocale = async () => {
   )
 }
 
-export default withLocalization(DenisPage)
+export default withLocalizationPage(DenisPage)
