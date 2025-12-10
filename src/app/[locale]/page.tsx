@@ -1,4 +1,4 @@
-import { withLocalization } from '@/components/shared/withLocalization/withLocalization'
+import { withLocalizationPage } from '@/components/shared/withLocalization/withLocalizationPage'
 import Denis from '@/components/denis/Denis'
 import Grigory from '@/components/grigory/Grigory'
 import Family from '@/components/family/Family'
@@ -15,4 +15,4 @@ const Home: PageWithLocale = async () => {
   return <Component />
 }
 
-export default withLocalization(Home)
+export default withLocalizationPage(Home)

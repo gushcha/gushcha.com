@@ -14,9 +14,9 @@
     "@tailwindcss/typography": "^0.5.16",
     "@types/string-template": "^1.0.7",
     "negotiator": "^1.0.0",
-    "next": "15.4.6",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
+    "next": "^16.0.8",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
     "react-markdown": "^10.1.0",
     "string-template": "^1.0.0",
     "tailwindcss": "^4.1.13"

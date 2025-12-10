@@ -44,7 +44,10 @@ export const getT = async (
   const locale = chooseLocale(supportedLocales)
 
   if (!locale) {
-    throw new Error('Locale is not set, is root layout wrapped `withLocalization`?')
+    throw new Error(
+      'Locale is not set, is page, generateMetadata' 
+      + ' or layout wrapped `withLocalizationPage/Metadata`?'
+    )
   }
 
   console.log('Locale getT()', locale, namespace, supportedLocales)
