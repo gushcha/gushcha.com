@@ -1,4 +1,4 @@
-import { withLocalization } from '@/components/shared/withLocalization/withLocalization'
+import { withLocalizationPage } from '@/components/shared/withLocalization/withLocalizationPage'
 import { PageWithLocale } from '@/types/PageWithLocale'
 import { getT } from '@/hooks/useT/getT'
 import ArticlePreview from '@/components/shared/articlePreview/ArticlePreview'
@@ -28,4 +28,4 @@ const PageBlog: PageWithLocale = async () => {
   )
 }
 
-export default withLocalization(PageBlog)
+export default withLocalizationPage(PageBlog)

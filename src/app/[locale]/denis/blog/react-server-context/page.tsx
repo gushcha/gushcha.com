@@ -1,5 +1,5 @@
 import LocalizedArticle from '@/components/shared/localizedArticle/LocalizedArticle'
-import { withLocalization } from '@/components/shared/withLocalization/withLocalization'
+import { withLocalizationPage } from '@/components/shared/withLocalization/withLocalizationPage'
 import { PageWithLocale } from '@/types/PageWithLocale'
 import {PREVIEW_REACT_SERVER_CONTEXT} from '@/app/[locale]/denis/blog/react-server-context/previewReactServerContext'
 
@@ -17,4 +17,4 @@ const PageReactServerContext: PageWithLocale = async () => {
   )
 }
 
-export default withLocalization(PageReactServerContext)
+export default withLocalizationPage(PageReactServerContext)
