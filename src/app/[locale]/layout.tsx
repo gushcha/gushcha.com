@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react'
-import { withLocalization } from '@/components/shared/withLocalization/withLocalization'
+import { withLocalizationPage } from '@/components/shared/withLocalization/withLocalizationPage'
 import ContextDictionaryProvider from '@/components/shared/contextDictionaryProvider/ContextDictionaryProvider'
 import { PageWithLocale } from '@/types/PageWithLocale'
 import FamilyLayout, { generateFamilyMetadata } from '@/components/family/FamilyLayout'
@@ -40,4 +40,4 @@ const RootLayout: PageWithLocale<PropsWithChildren> = async ({ children, ...prop
   )
 }
 
-export default withLocalization(RootLayout)
+export default withLocalizationPage(RootLayout)

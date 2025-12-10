@@ -3,6 +3,6 @@ export type MetadataLayoutProps = {
 }
 
 export type MetadataPageProps = {
-  params: { locale: string }
-  searchParams: { [key: string]: string | string[] | undefined }
+  params: Promise<{ locale: string }>
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 } & MetadataLayoutProps

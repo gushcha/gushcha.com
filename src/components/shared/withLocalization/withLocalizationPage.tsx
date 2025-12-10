@@ -1,6 +1,5 @@
 import React from 'react'
 import { setLocale } from '@/cache/cacheLocale'
-import { isLocale } from '@/constants/locales'
 import { PageWithLocale, PageWithLocaleProps } from '@/types/PageWithLocale'
 
 /**
@@ -8,16 +7,13 @@ import { PageWithLocale, PageWithLocaleProps } from '@/types/PageWithLocale'
  * @param Wrapped Component expecting a params promise containing locale.
  * @returns Async wrapper component that validates and sets locale then renders Wrapped.
  */
-export const withLocalization = (Wrapped: PageWithLocale) => {
-  const WithLocalizationServerWrapper = async (props: PageWithLocaleProps) => {
+export const withLocalizationPage = (Wrapped: PageWithLocale) => {
+  const withLocalizationPageServerWrapper = async (props: PageWithLocaleProps) => {
     const { locale } = await props.params
 
-    if (!isLocale(locale)) {
-      throw new Error(`Invalid locale: ${locale}`)
-    }
     setLocale(locale)
     return <Wrapped {...props} />
   }
 
-  return WithLocalizationServerWrapper
+  return withLocalizationPageServerWrapper
 }
