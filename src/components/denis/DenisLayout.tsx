@@ -30,8 +30,6 @@ export const generateDenisMetadata = async (_props: MetadataLayoutProps) => {
 }
 
 const DenisLayout: PageWithLocale<PropsWithChildren> = async ({ children }) => {
-  getLocale()
-  console.log('RENDERING Denis LAYOUT')
   return (
     <html lang={getLocale()} suppressHydrationWarning className={`${geistSans.className} ${geistMono.className} bg-violet-100 dark:bg-pink-950`}>
       <head>
