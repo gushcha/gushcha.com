@@ -1,5 +1,5 @@
 
 export default{
-  "title": "Η οικογένεια μας",
-  "description": "Αυτή είναι η οικογένεια μας",
+  "metadata_title": "Η οικογένεια μας",
+  "metadata_description": "Αυτή είναι η οικογένεια μας",
 }

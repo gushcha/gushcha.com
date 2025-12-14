@@ -2,6 +2,7 @@ import { setLocale } from '@/cache/cacheLocale'
 import { isLocale } from '@/constants/locales'
 import { MetadataPageProps } from '@/types/MetadataProps'
 import { MetadataWithLocale } from '@/types/MetadataWithLocale'
+import type { ResolvingMetadata } from 'next'
 
 /**
  * Server HOF that ensures a valid locale is set before rendering the wrapped component.
@@ -9,14 +10,16 @@ import { MetadataWithLocale } from '@/types/MetadataWithLocale'
  * @returns Async wrapper component that validates and sets locale then renders Wrapped.
  */
 export const withLocalizationMetadata = (wrapped: MetadataWithLocale) => {
-  const withLocalizationMetadataServerWrapper = async (props: MetadataPageProps) => {
+  const withLocalizationMetadataServerWrapper = async (
+    props: MetadataPageProps, parent: ResolvingMetadata
+  ) => {
     const { locale } = await props.params
 
     if (!isLocale(locale)) {
       throw new Error(`Invalid locale: ${locale}`)
     }
     setLocale(locale)
-    return wrapped(props)
+    return wrapped(props, parent)
   }
 
   return withLocalizationMetadataServerWrapper

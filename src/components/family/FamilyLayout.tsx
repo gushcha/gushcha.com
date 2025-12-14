@@ -24,7 +24,7 @@ export const generateFamilyMetadata = async (_props: MetadataLayoutProps) => {
   console.log('RENDERING Family METADATA')
   const t = await getT('metadata')
   return {
-    title: t('title'),
+    title: t('metadata_title'),
     description: 'Family site coming soon',
   }
 }

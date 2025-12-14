@@ -24,8 +24,8 @@ const geistMono = Geist_Mono({
 export const generateDenisMetadata = async (_props: MetadataLayoutProps) => {
   const t = await getT('denis', ['en', 'ru'])
   return {
-    title: t('title'),
-    description: t('description'),
+    title: t('metadata_title'),
+    description: t('metadata_description'),
   }
 }
 

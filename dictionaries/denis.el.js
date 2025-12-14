@@ -1,6 +1,6 @@
 export default {
-  "title": "Ντενίς Γκούσχα - Frontend developer",
-  "description": "Ντενίς Γκούσχα. Προσωπική σελίδα frontend developer.",
+  "metadata_title": "Ντενίς Γκούσχα | Frontend developer",
+  "metadata_description": "Ντενίς Γκούσχα. Προσωπική σελίδα frontend developer.",
   "my_brother_apos_s": "η ιστοσελίδα του αδελφού μου",
   "or_if_you_were": "Ή αν ψάχνατε για ηχολήπτη με το ίδιο επώνυμο, δείτε ",
   "blog": "Ιστολόγιο",
