@@ -22,7 +22,7 @@ const PageBlog: PageWithLocale = async () => {
   return (
     <main>
       <Block >
-        <Heading level={1}>{t('blog')}</Heading>
+        <Heading level={1} className='text-blue-900 dark:text-blue-200'>{t('blog')}</Heading>
       </Block>
       <Block isContrast>
         <ArticlePreview

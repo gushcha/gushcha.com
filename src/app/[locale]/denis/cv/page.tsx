@@ -32,7 +32,7 @@ const CvPage: PageWithLocale = async () => {
         <section>
           <div className="flex flex-col sm:flex-row gap-4">
             <div className='flex-1'>
-              <Heading level={1} className="sm:max-w-[150px]">{t('denis_gushcha')}</Heading>
+              <Heading level={1} className="sm:max-w-[150px] text-blue-900 dark:text-blue-200">{t('denis_gushcha')}</Heading>
               <Heading level={4}>
                 {t('senior_frontend_developer')},
                 <br />

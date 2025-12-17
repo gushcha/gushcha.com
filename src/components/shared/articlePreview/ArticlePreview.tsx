@@ -30,14 +30,14 @@ const ArticlePreview: React.FC<ArticlePreviewProps> = async ({
   const date = (dateUpdated || datePublished).toLocaleDateString(getLocale())
 
   return (
-    <div>
-      <LocalizedLink href={href}>
-        <Heading level={2}>{title}</Heading>
-      </LocalizedLink>
-      <p>{description}</p>
-      <p>{tMain('available_languages')}: {supportedLanguages.join(', ')}</p>
-      <p>{dateLabel}: {date}</p>
-    </div>
+    <LocalizedLink href={href} className='no-underline group'>
+      <Heading level={2} className='group-hover:underline'>{title}</Heading>
+      <p className=''>{description}</p>
+      <div className='flex mt-4 flex-col sm:flex-row sm:justify-between text-slate-400 text-sm'>
+        <p>{tMain('available_languages')}: {supportedLanguages.join(', ')}</p>
+        <p>{dateLabel}: {date}</p>
+      </div>
+    </LocalizedLink>
   )
 }
 
