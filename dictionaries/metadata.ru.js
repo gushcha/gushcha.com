@@ -1,4 +1,4 @@
 export default{
-  "title": "Наша семья",
-  "description": "Это наша семья",
+  "metadata_title": "Наша семья",
+  "metadata_description": "Это наша семья",
 }

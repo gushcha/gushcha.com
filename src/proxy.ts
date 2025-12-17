@@ -43,7 +43,7 @@ function suggestLocale(req: NextRequest, availableLocales: Locale[]) {
   return match(languages, [...availableLocales], availableLocales[0])
 }
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   console.debug('-------------------')
   console.warn(req.nextUrl.pathname)
   const {locale, member, pathNameWithoutLocale} = getRequestLocaleParams(req)

@@ -1,6 +1,6 @@
 export default{
-  "title": "Denis Gushcha - Frontend developer",
-  "description": "Denis Gushcha. Frontend developer's personal page. ",
+  "metadata_title": "Denis Gushcha | Frontend developer",
+  "metadata_description": "Denis Gushcha. Frontend developer's personal page. ",
   "my_brother_apos_s": "my brother's webpage",
   "or_if_you_were": "Or if you were looking for a sound engineer with same surname, checkout ",
   "blog": "Blog",

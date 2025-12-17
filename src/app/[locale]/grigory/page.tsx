@@ -1,5 +1,5 @@
 import Grigory from '@/components/grigory/Grigory'
-import { withLocalization } from '@/components/shared/withLocalization/withLocalization'
+import { withLocalizationPage } from '@/components/shared/withLocalization/withLocalizationPage'
 import { PageWithLocale } from '@/types/PageWithLocale'
 import React from 'react'
 
@@ -9,4 +9,4 @@ const SubPage: PageWithLocale = async () => {
   )
 }
 
-export default withLocalization(SubPage)
+export default withLocalizationPage(SubPage)

@@ -1,4 +1,4 @@
 export default{
-  "title": "Family site",
-  "description": "This is our family",
+  "metadata_title": "Family site",
+  "metadata_description": "This is our family",
 }

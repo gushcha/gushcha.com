@@ -1,8 +1,17 @@
 import LocalizedArticle from '@/components/shared/localizedArticle/LocalizedArticle'
-import { withLocalization } from '@/components/shared/withLocalization/withLocalization'
+import { withLocalizationPage } from '@/components/shared/withLocalization/withLocalizationPage'
 import { PageWithLocale } from '@/types/PageWithLocale'
 import {PREVIEW_REACT_SERVER_CONTEXT} from '@/app/[locale]/denis/blog/react-server-context/previewReactServerContext'
+import { withLocalizationMetadata } from '@/components/shared/withLocalization/withLocalizationMetadata'
+import { getT } from '@/hooks/useT/getT'
 
+export const generateMetadata = withLocalizationMetadata(async ()=>{
+  const t = await getT('server-context', ['en'])
+  return {
+    title: t('metadata-title'),
+    description: t('metadata_description'),
+  }
+})
 
 const PageReactServerContext: PageWithLocale = async () => {
   return (
@@ -17,4 +26,4 @@ const PageReactServerContext: PageWithLocale = async () => {
   )
 }
 
-export default withLocalization(PageReactServerContext)
+export default withLocalizationPage(PageReactServerContext)

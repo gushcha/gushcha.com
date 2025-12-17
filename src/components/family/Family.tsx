@@ -13,7 +13,7 @@ export const Family: React.FC = async () => {
   return (
     <main>
       <Block >
-        <Heading level={1}>{t('heading')}</Heading>
+        <Heading level={1} className='text-blue-900 dark:text-blue-200'>{t('heading')}</Heading>
       </Block>
       <LocalizedLink href={'/denis'} className='no-underline'>
         <Block isContrast>

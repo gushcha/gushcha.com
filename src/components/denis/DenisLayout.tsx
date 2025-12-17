@@ -24,14 +24,12 @@ const geistMono = Geist_Mono({
 export const generateDenisMetadata = async (_props: MetadataLayoutProps) => {
   const t = await getT('denis', ['en', 'ru'])
   return {
-    title: t('title'),
-    description: t('description'),
+    title: t('metadata_title'),
+    description: t('metadata_description'),
   }
 }
 
 const DenisLayout: PageWithLocale<PropsWithChildren> = async ({ children }) => {
-  getLocale()
-  console.log('RENDERING Denis LAYOUT')
   return (
     <html lang={getLocale()} suppressHydrationWarning className={`${geistSans.className} ${geistMono.className} bg-violet-100 dark:bg-pink-950`}>
       <head>

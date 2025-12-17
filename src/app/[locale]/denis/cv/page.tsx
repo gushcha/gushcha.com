@@ -1,4 +1,7 @@
-import { withLocalization } from '@/components/shared/withLocalization/withLocalization'
+import { Metadata } from 'next'
+
+import { withLocalizationPage } from '@/components/shared/withLocalization/withLocalizationPage'
+import { withLocalizationMetadata } from '@/components/shared/withLocalization/withLocalizationMetadata'
 import { PageWithLocale } from '@/types/PageWithLocale'
 import { getT } from '@/hooks/useT/getT'
 import Block from '@/components/shared/block/Block'
@@ -6,6 +9,14 @@ import Contact from '@/components/shared/contact/Contact'
 import Image from '@/components/shared/image/Image'
 import Heading from '@/components/shared/heading/Heading'
 import { ContactType } from '@/components/shared/contact/ContactIcon'
+
+export const generateMetadata = withLocalizationMetadata(async ()=>{
+  const t = await getT('denis-cv', ['en', 'ru'])
+  return {
+    title: t('metadata_title'),
+    description: t('metadata_description'),
+  }
+})
 
 const CvPage: PageWithLocale = async () => {
   const t = await getT('denis-cv', ['en', 'ru'])
@@ -21,7 +32,7 @@ const CvPage: PageWithLocale = async () => {
         <section>
           <div className="flex flex-col sm:flex-row gap-4">
             <div className='flex-1'>
-              <Heading level={1} className="sm:max-w-[150px]">{t('denis_gushcha')}</Heading>
+              <Heading level={1} className="sm:max-w-[150px] text-blue-900 dark:text-blue-200">{t('denis_gushcha')}</Heading>
               <Heading level={4}>
                 {t('senior_frontend_developer')},
                 <br />
@@ -238,4 +249,4 @@ const CvPage: PageWithLocale = async () => {
   )
 }
 
-export default withLocalization(CvPage)
+export default withLocalizationPage(CvPage)

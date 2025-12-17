@@ -5,5 +5,6 @@ export const DICTIONARY_NAMES = [
   'denis-cv',
   'denis',
   'denis-navbar',
-  'denis-blog'
+  'denis-blog',
+  'server-context',
 ] as const
