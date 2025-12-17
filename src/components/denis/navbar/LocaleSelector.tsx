@@ -12,7 +12,7 @@ const LocaleSelector = () => {
   const locales = [
     { code: 'en', label: 'English', flag: '🇬🇧' },
     { code: 'ru', label: 'Русский', flag: '🇷🇺' },
-    { code: 'el', label: 'Ελληνικά', flag: '🇬🇷' },
+    // { code: 'el', label: 'Ελληνικά', flag: '🇬🇷' },
   ]
 
   const currentLocale = pathname?.split('/')[1] || 'en'

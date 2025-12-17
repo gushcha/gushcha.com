@@ -1,4 +1,6 @@
 export default {
+  'metadata-title': 'Ντένις Γκούσχα | Ιστολόγιο frontend προγραμματιστή',
+  'metadata_description': 'Αληθινές εμπειρίες και τεχνικές για την κατασκευή μοντέρνων διαδικτυακών εφαρμογών. React, JavaScript, CSS, απόδοση, αρχιτεκτονική και πολλά άλλα.',
   'blog': 'Ιστολόγιο',
   'languages': 'Διαθέσιμες γλώσσες',
   'react_server_context_header': 'Συμφραζόμενα React Server Components',

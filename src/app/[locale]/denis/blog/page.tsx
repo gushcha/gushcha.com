@@ -4,7 +4,17 @@ import { getT } from '@/hooks/useT/getT'
 import ArticlePreview from '@/components/shared/articlePreview/ArticlePreview'
 import Block from '@/components/shared/block/Block'
 import Heading from '@/components/shared/heading/Heading'
+import { withLocalizationMetadata } from '@/components/shared/withLocalization/withLocalizationMetadata'
 import {PREVIEW_REACT_SERVER_CONTEXT} from '@/app/[locale]/denis/blog/react-server-context/previewReactServerContext'
+
+
+export const generateMetadata = withLocalizationMetadata(async ()=>{
+  const t = await getT('denis-blog', ['en', 'ru', 'el'])
+  return {
+    title: t('metadata-title'),
+    description: t('metadata_description'),
+  }
+})
 
 const PageBlog: PageWithLocale = async () => {
   const t = await getT('denis-blog', ['en', 'ru', 'el'])
