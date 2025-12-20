@@ -5,15 +5,17 @@ import LocalizedLink from '@/components/shared/localizedLink/LocalizedLink'
 import BurgerIcon from './BurgerIcon'
 import Dropdown from '@/components/shared/dropdown/Dropdown'
 import { useT } from '@/hooks/useT/useT'
+import NavbarContactMe from './NavbarContactMe'
 
 const NavbarLinks = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const {t, isLoading} = useT('denis-navbar', ['en', 'ru', 'el'])
+  const [t, isLoading] = useT('denis-navbar', ['en', 'ru', 'el'])
   const links = [
     { href: '/denis', label: t('home') },
     { href: '/denis/cv', label: t('cv') },
     { href: '/denis/blog', label: t('blog') },
     { href: '/family', label: t('family') },
+    { href: '/denis/contact', label: t('contact'), isAccent: true, mobileOnly: true },
   ]
 
   if(isLoading) {
@@ -45,11 +47,12 @@ const NavbarLinks = () => {
             <LocalizedLink
               key={link.href}
               href={link.href}
-              className="
+              className={`
                 block px-6 py-4
                 hover:bg-violet-100/60 dark:hover:bg-violet-900/60
                 no-underline 
-                transition-colors"
+                transition-colors
+                ${link.isAccent ? 'font-bold text-blue-900 dark:text-blue-200' : ''}`}
               onClick={() => setIsMenuOpen(false)}
             >
               {link.label}
@@ -60,7 +63,7 @@ const NavbarLinks = () => {
 
       {/* Desktop: Horizontal Links */}
       <div className="hidden sm:flex items-center gap-6">
-        {links.map((link) => (
+        {links.filter((link)=> !link.mobileOnly).map((link) => (
           <LocalizedLink
             key={link.href}
             href={link.href}
@@ -69,6 +72,7 @@ const NavbarLinks = () => {
             {link.label}
           </LocalizedLink>
         ))}
+        <NavbarContactMe />
       </div>
     </>
   )

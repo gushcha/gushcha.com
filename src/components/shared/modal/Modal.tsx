@@ -43,7 +43,7 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose, children }) => {
       onClick={handleBackdropClick}
       ref={modalRef}
     >
-      <div className="relative max-h-[90vh] max-w-[90vw] p-4">
+      <div className="relative max-h-[90vh] max-w-[90vw] p-4 overflow-y-auto">
         <button
           onClick={onClose}
           className="absolute right-6 top-6 z-10 rounded-full bg-black/50 p-2 text-white transition-colors hover:bg-black/70"
