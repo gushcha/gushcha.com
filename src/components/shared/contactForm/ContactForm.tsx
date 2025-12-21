@@ -18,7 +18,9 @@ const ContactForm: React.FC<ContactFormProps> = ({localizedSrc, className=''}) =
   return (
     <div style={{position: 'relative'}}>
       {loading && (
-        <div style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(255,255,255,0.7)', zIndex: 1}}>
+        <div className="absolute top-0 left-0 w-full h-full 
+                        flex items-center justify-center z-[1]"
+        >
           <span className="text-blue-900 dark:text-blue-200">
             <Loader size="lg" />
           </span>
