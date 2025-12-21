@@ -4,6 +4,7 @@ import React, { FC, useState } from 'react'
 import { useT } from '@/hooks/useT/useT'
 import Modal from '@/components/shared/modal/Modal'
 import GetInTouch from '@/components/denis/getInTouch/GetInTouch'
+import { BACKGROUNDS } from '@/constants/backgrounds'
 
 const NavbarContactMe: FC = () => {
   const [t, isLoading] = useT('denis-navbar', ['en', 'ru', 'el'])
@@ -32,7 +33,7 @@ const NavbarContactMe: FC = () => {
         {t('contact')}
       </LocalizedLink>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <div className='bg-radial from-blue-50 dark:from-violet-950 from-20% to-violet-100  dark:to-pink-950 to-80%'>
+        <div className={BACKGROUNDS.denis}>
           <GetInTouch formClassName='h-[calc(100dvh-248px)] max-h-[840px]'/>
         </div>
       </Modal>

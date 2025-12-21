@@ -8,6 +8,7 @@ import { MetadataLayoutProps } from '@/types/MetadataProps'
 import ThemeToggle from '@/components/shared/theme/ThemeToggle'
 import ThemeAntiFlicker from '@/components/shared/theme/ThemeAntiFlicker'
 import Head from 'next/head'
+import { BACKGROUNDS } from '@/constants/backgrounds'
 
 
 const geistSans = Geist({
@@ -37,7 +38,7 @@ const FamilyLayout: PageWithLocale<PropsWithChildren> = async ({ children }) => 
       <Head>
         <ThemeAntiFlicker />
       </Head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-blue-200 dark:bg-blue-900 text-gray-900 dark:text-gray-100 transition-colors`}> 
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased ${BACKGROUNDS.family} text-gray-900 dark:text-gray-100 transition-colors`}> 
         {children}
         <ThemeToggle />
       </body>

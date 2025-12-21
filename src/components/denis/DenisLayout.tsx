@@ -10,6 +10,7 @@ import BackgroundTransitioner from '@/components/shared/backgroundTransitioner/B
 import ThemeAntiFlicker from '@/components/shared/theme/ThemeAntiFlicker'
 import ThemeToggle from '@/components/shared/theme/ThemeToggle'
 import Navbar from '@/components/denis/navbar/Navbar'
+import { BACKGROUNDS } from '@/constants/backgrounds'
 
 const geistSans = Geist({
   variable: '--font-sans',
@@ -36,7 +37,7 @@ const DenisLayout: PageWithLocale<PropsWithChildren> = async ({ children }) => {
         <ThemeAntiFlicker />
       </head>
       <body
-        className={`denis-layout font-sans min-h-screen bg-radial from-blue-50 dark:from-violet-950 from-20% to-violet-100  dark:to-pink-950 to-80%  dark:text-slate-200 text-slate-800 transition-background duration-1000 `}
+        className={`denis-layout font-sans min-h-screen ${BACKGROUNDS.denis}  dark:text-slate-200 text-slate-800 transition-background duration-1000 `}
       >
         <Navbar />
         <main className="pb-20 sm:pb-0 sm:pt-20">
