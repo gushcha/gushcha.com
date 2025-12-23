@@ -2,5 +2,6 @@ export default {
   "home": "Home",
   "cv": "CV",
   "blog": "Blog",
-  "family": "Family"
+  "family": "Family",
+  "contact": "Get in Touch",
 }

@@ -36,8 +36,8 @@ export const Denis: React.FC = async () => {
         </p>
         <p className='mt-4'>{t('discover_my_interests_in')}<LocalizedLink href='/denis/blog'>{t('blog')}</LocalizedLink>.
         </p>
-        <p className='mt-4'>{t('or_if_you_were')}<LocalizedLink href='/grigory'>{t('my_brother_apos_s')}</LocalizedLink>.
-        </p>
+        {/* <p className='mt-4'>{t('or_if_you_were')}<LocalizedLink href='/grigory'>{t('my_brother_apos_s')}</LocalizedLink>.
+        </p> */}
 
       </Block>
     </main>

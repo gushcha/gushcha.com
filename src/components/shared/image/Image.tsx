@@ -2,7 +2,7 @@
 
 import React, { FC, useState } from 'react'
 import NextImage from 'next/image'
-import Modal from '../modal/Modal'
+import Modal from '@/components/shared/modal/Modal'
 
 interface ImageProps {
   src: string

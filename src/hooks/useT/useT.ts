@@ -63,5 +63,5 @@ export const useT = (
 
   const isLoading = !providedDictionary || providedDictionary instanceof Promise
 
-  return { t, isLoading }
+  return [ t, isLoading ] as const
 }

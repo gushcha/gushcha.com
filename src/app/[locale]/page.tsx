@@ -7,7 +7,7 @@ import { getMemberArtifactByHost } from '@/hooks/getMemberArtifactByHost/getMemb
 
 const Home: PageWithLocale = async () => {
   const Component = await getMemberArtifactByHost({
-    'family': Family,
+    'family': Denis,
     'denis': Denis,
     'grigory': Grigory,
   })

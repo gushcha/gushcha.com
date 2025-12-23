@@ -5,6 +5,7 @@ import { getT } from '@/hooks/useT/getT'
 import { PageWithLocale } from '@/types/PageWithLocale'
 import { getLocale } from '@/cache/cacheLocale'
 import { MetadataLayoutProps } from '@/types/MetadataProps'
+import { BACKGROUNDS } from '@/constants/backgrounds'
 
 const tiny5 = Tiny5({
   subsets: ['latin', 'cyrillic'],
@@ -26,7 +27,7 @@ const GrigoryLayout: PageWithLocale<PropsWithChildren> = async ({ children }) =>
   console.log('RENDERING Grigory LAYOUT')
   return (
     <html lang={getLocale()}>
-      <body className={`${tiny5.className} antialiased min-h-screen bg-gradient-to-br from-amber-50 via-white to-rose-50`}> 
+      <body className={`${tiny5.className} antialiased min-h-screen ${BACKGROUNDS.grigory} transition-background duration-1000`}> 
         {children}
       </body>
     </html>
