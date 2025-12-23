@@ -28,9 +28,9 @@ const GetInTouch: FC<{formClassName?: string}> = ({formClassName}) => {
           <Contact type={ContactType.Gmail} value="mailto:denis.gushcha@gmail.com">
             denis@gushcha.com
           </Contact>
-          <Contact type={ContactType.Telegram} value="https://t.me/ootconose">
+          {/* <Contact type={ContactType.Telegram} value="https://t.me/ootconose">
             {tCv('telegram')}
-          </Contact>
+          </Contact> */}
           <Contact type={ContactType.Github} value="https://t.me/ootconose">
             {tCv('github')}
           </Contact>

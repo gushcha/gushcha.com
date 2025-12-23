@@ -59,11 +59,11 @@ const CvPage: PageWithLocale = async () => {
               denis@gushcha.com
             </Contact>
           </p>
-          <p>
+          {/* <p>
             <Contact type={ContactType.Telegram} value="https://t.me/ootconose">
               {t('telegram')}
             </Contact>
-          </p>
+          </p> */}
           <p>
             <Contact type={ContactType.Github} value="https://t.me/ootconose">
               {t('github')}
