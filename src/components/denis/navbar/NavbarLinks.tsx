@@ -14,7 +14,7 @@ const NavbarLinks = () => {
     { href: '/denis', label: t('home') },
     { href: '/denis/cv', label: t('cv') },
     { href: '/denis/blog', label: t('blog') },
-    { href: '/family', label: t('family') },
+    // { href: '/family', label: t('family') },
     { href: '/denis/contact', label: t('contact'), isAccent: true, mobileOnly: true },
   ]
 
