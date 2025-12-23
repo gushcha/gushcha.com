@@ -15,7 +15,7 @@ export const generateMetadata = async (
 ): Promise<Metadata> => {
 
   const generateMemberMetadata = await getMemberArtifactByHost({
-    'family': generateFamilyMetadata,
+    'family': generateDenisMetadata,
     'denis': generateDenisMetadata,
     'grigory': generateGrigoryMetadata,
   })
