@@ -37,12 +37,12 @@ const DenisLayout: PageWithLocale<PropsWithChildren> = async ({ children }) => {
         <ThemeAntiFlicker />
       </head>
       <body
-        className={`denis-layout font-sans min-h-screen ${BACKGROUNDS.denis}  dark:text-slate-200 text-slate-800 transition-background duration-1000 `}
+        className={`denis-layout font-sans overflow-hidden ${BACKGROUNDS.denis} overflow-hidden dark:text-slate-200 text-slate-800 transition-background duration-1000 `}
       >
         <Navbar />
-        <main className="pb-20 sm:pb-0 sm:pt-20">
+        <div className='max-h-[calc(100dvh-64px)] overflow-scroll sm:max-h-screen sm:pt-[64px]'>
           {children}
-        </main>
+        </div>
         <ThemeToggle />
       </body>
       <BackgroundTransitioner />
