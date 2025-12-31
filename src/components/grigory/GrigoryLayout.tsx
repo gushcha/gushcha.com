@@ -17,7 +17,7 @@ export const generateGrigoryMetadata = async (_props: MetadataLayoutProps) => {
   console.log('RENDERING Grigory METADATA')
   const t = await getT('metadata')
   return {
-    title: t('title') + ' - Grigory',
+    title: t('metadata_title') + ' - Grigory',
     description: 'Grigory page coming soon',
   }
 }
