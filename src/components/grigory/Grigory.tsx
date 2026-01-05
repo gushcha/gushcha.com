@@ -1,210 +1,212 @@
 'use server'
-import React from 'react';
-import '@/components/grigory/grigory.css'
+import React from 'react'
+import Navbar from '@/components/grigory/navbar/Navbar'
+import Block from '@/components/grigory/block/Block'
+import Heading from '@/components/shared/heading/Heading'
+import Image from '@/components/shared/image/Image'
+import { SocialIcon } from 'react-social-icons'
 
 export const Grigory: React.FC = async () => {
   return (
-    <div className="v1_902">
-      <div className="v1_937">
-        <div className="v1_938">
-          <span className="v1_939">Services</span>
+    <div>
+      {/* Navbar */}
+      <Block hideSeparator>
+        <Navbar />
+        <Heading level={1}>
+          Grigory Gushcha
+        </Heading>
+        <p className='text-slate-600 pt-2'>
+          Audio Producer/Engineer
+        </p>
+        <p className='pb-4 text-slate-600'>
+          Belgrade, Serbia
+        </p>
+        <p>
+          Film Audio Post/Mixing, Location Sound, Music Mixing/Mastering
+        </p>
+      </Block>
+      <Block className='mt-6'>
+        <Heading level={2}>Services</Heading>
+        <div className="grid md:grid-cols-3 gap-8">
+          <div>
+            <Image src="/assets/grigory/img/v1_988.png" alt="Film Audio Post/Mixing" className="rounded-lg w-full h-64 object-cover mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Film Audio Post/Mixing</h3>
+            <p className="text-gray-600">Professional Audio post-production for any media content.</p>
+          </div>
+          <div>
+            <Image src="/assets/grigory/img/v1_993.png" alt="Location Sound" className="rounded-lg w-full h-64 object-cover mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Location Sound</h3>
+            <p className="text-gray-600">Production Sound engineering for interviews, advertisements, feature films etc.</p>
+          </div>
+          <div>
+            <Image src="/assets/grigory/img/v1_998.png" alt="Music Mixing/Mastering" className="rounded-lg w-full h-64 object-cover mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Music Mixing/Mastering</h3>
+            <p className="text-gray-600">Crafting professional, release-ready mixes and mastering them to the industry standards for any digital platform or other distribution option.</p>
+          </div>
+        </div>
+
+        <Heading level={2}>About</Heading>
+        <div className="flex flex-col md:flex-row items-center gap-8">
+          <div className="flex-1 flex flex-col gap-4 text-slate-600">
+            <p>
+              Hello there! I am Grigory, an audio producer providing technical audio support for film crews and musicians. My goal is to eliminate any technical audio difficulties that can stand in the way of your creativity, as well as provide great sound for the stories that you aim to share.
+            </p>
+            <p>
+              I hold a Bachelor’s degree in Audio Production from the University of Hertfordshire. I also studied audio and music production at SAE Institute Belgrade (2023–2025), Moscow Music School (2020–2023), and completed the Art of Mixing course through Berklee Online.
+            </p>
+            <p>
+              Outside of work, I write music, play D&D, and collect video games.
+            </p>
+          </div>
+          <div className="flex-1 flex justify-center">
+            <Image src="/assets/grigory/img/about.png" alt="Grigory Gushcha" className="rounded-lg w-80 h-80 object-cover" />
+          </div>
+        </div>
+      </Block>
+
+      <Block>
+        {/* Skills & Tools Section */}
+        <section className="container mx-auto px-4 py-12">
+          <Heading level={2} className="mb-8">Film Audio Post/Mixing</Heading>
+          <Image src="/assets/grigory/img/v4_86.png" alt="Studio Session" className="rounded-lg w-full max-w-2xl h-80 object-cover" />
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 className="text-lg font-semibold mb-1">Skills</h4>
+              <ul className="list-disc list-inside text-gray-600">
+                <li>Studio Recording, Noise Reduction, Pitch Correction and vocal editing</li>
+                <li>Gain staging, Vocal and instrumental processing, Mastering</li>
+                <li>Synchronisation, dialogue editing, sound restoration, sound design</li>
+                <li>Foley, mixing in stereo and surround (5.1) systems</li>
+                <li>Managing a production team</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold mb-1">Tools</h4>
+              <ul className="list-disc list-inside text-gray-600">
+                <li>Pro Tools, Ableton Live, Logic Pro, Audacity, Izotope Rx, Melodyne, Final Cut</li>
+              </ul>
+            </div>
+          </div>
+          <Heading level={4}>Music</Heading>
+          <p>If music is needed I work directly with sound designers and composers, so you don&apos;t have</p>
+        </section>
+      </Block>
+      <Block>
+        <Heading level={2}>Location Sound</Heading>
+        <div>
+
+          <Heading level={4}>Location</Heading>
+          Currently in Belgrade, Serbia. Ready to travel for bigger projects.
+          <Heading level={4}>Skills</Heading>
+          Production Mixer, Boom Operator, Lavalier Recording, Production assistant
+        </div>
+        <Image src="/assets/grigory/img/v4_87.jpg" alt="Recording Room" className="rounded-lg w-full max-w-lg h-80 object-cover" />
+
+        <Heading level={2} className="mb-8">Equipment</Heading>
+        <div className="grid md:grid-cols-2 gap-8">
+          <div>
+            <div className="flex items-center gap-4 mb-2">
+              <img src="/assets/grigory/img/v1_873.png" alt="Recorder Icon" className="w-8 h-8" />
+              <h4 className="text-lg font-semibold">Recorder</h4>
+            </div>
+            <p className="text-gray-600">Zoom F6</p>
+          </div>
+          <div>
+            <div className="flex items-center gap-4 mb-2">
+              <img src="/assets/grigory/img/v1_882.png" alt="Shotgun Microphone Icon" className="w-8 h-8" />
+              <h4 className="text-lg font-semibold">Shotgun Microphone</h4>
+            </div>
+            <p className="text-gray-600">Rode NTG-3, Rode Blimp</p>
+          </div>
+          <div>
+            <div className="flex items-center gap-4 mb-2">
+              <img src="/assets/grigory/img/v1_890.png" alt="Lavalier Microphone Icon" className="w-8 h-8" />
+              <h4 className="text-lg font-semibold">Lavalier Microphone</h4>
+            </div>
+            <p className="text-gray-600">DPA 4060</p>
+          </div>
+          <div>
+            <div className="flex items-center gap-4 mb-2">
+              <img src="/assets/grigory/img/v35_3.png" alt="Software Icon" className="w-8 h-8" />
+              <h4 className="text-lg font-semibold">Software</h4>
+            </div>
+            <p className="text-gray-600">Pro Tools, Izotope Rx, Ableton, Final Cut</p>
+          </div>
+        </div>
+      </Block>
+      {/* Highlight Section with Banner Image */}
+      <section className="container mx-auto px-4 py-12">
+        <Heading level={2}>Music Mixing/Mastering</Heading>
+        <div className="flex justify-center">
+          <Image src="/assets/grigory/img/v35_41.png" alt="Mixing Demo Reel Banner" className="rounded-lg w-full max-w-4xl h-48 object-cover shadow-lg" />
+        </div>
+        <Heading level={2}>Mixing Demo Reel</Heading>
+        <div>
+          <ul>
+            <li>
+              <Heading level={4}>Skills</Heading>
+              <p>
+                Studio Recording, Noise Reduction, Pitch Correction and vocal editing, Gain staging, Vocal and instrumental processing, Mastering.
+              </p>
+            </li>
+            <li>
+              <Heading level={4}>Tools</Heading>
+              <p>
+                Studio Recording, Noise Reduction, Pitch Correction and vocal editing, Gain staging, Vocal and instrumental processing, Mastering.
+              </p>
+            </li>
+            <li>
+              <Heading level={4}>Anyting else?</Heading>
+              <p>
+                I also have experience in podcast mixina. livel audio engineering, songwriting and production, so don&apos;t hesitate to contact me for any other requests connected with audio.
+              </p>
+            </li>
+            <li>
+              <p>
+                <button>Contact</button> <button>More Of my work</button>
+              </p>
+            </li>
+          </ul>
+        </div>
+        <Image src="/assets/grigory/img/v4_20.png" alt="Mixing Console" className="rounded-lg w-full max-w-xl h-80 object-cover" />
+      </section>
+      
+      
+      <section className="container mx-auto px-4 py-12">
+        <Heading level={2} className="mb-8">Contacts</Heading>
+        <div>
+          <p className="text-lg font-semibold">+23123123123</p>
+          <p className="text-lg font-semibold">skjdalkdja@gmail.com</p>
+        </div>
+        <div>
+          <SocialIcon url="https://facebook.com" />
+          <SocialIcon url="https://linkedin.com" />
+          <SocialIcon url="https://youtube.com" />
+          <SocialIcon url="https://instagram.com" />
+        </div>
+      </section>
+
+      <section>
+        <div>Grigory Gushcha Portfolio site</div>
+        <div>
+          <Heading level={4}>Services</Heading>
           <span className="v1_940">Film Audio Post/Mixing</span>
           <span className="v1_941">Location Sound</span>
           <span className="v1_942">Music Mixing/Mastering</span>
         </div>
-        <div className="v1_943">
-          <span className="v1_944">More About me</span>
+        <div>
+          <Heading level={4}>More about me</Heading>
           <span className="v1_945">My music</span>
           <span className="v1_946">My Youtube Channel</span>
           <span className="v1_947">The Mass Conceptual EP</span>
         </div>
-        <div className="v1_948">
-          <span className="v1_949">More of my Work</span>
+        <div>
+          <Heading level={4}>More of my work</Heading>
           <span className="v1_950">Podcast KSJP</span>
           <span className="v1_951">Laladevochka - Chasing Dreams</span>
           <span className="v1_952">Home</span>
         </div>
-        <span className="v1_953">Grigory Gushcha Portfolio site</span>
-        <div className="name">
-        </div>
-      </div>
-      <div className="v1_976">
-        <span className="v1_978">About</span>
-        <span className="v1_979">Film Audio Post/Mixing</span>
-        <span className="v1_980">Location Sound</span>
-        <div className="v1_981">
-          <span className="v1_982">Contacts</span>
-        </div>
-        <span className="v1_983">Site name</span>
-      </div>
-      <span className="v1_985">Services</span>
-      <div className="v1_988">
-      </div>
-      <div className="v1_989">
-        <span className="v1_990">Film Audio Post/ Mixing</span>
-        <span className="v1_991">Professional Audio post-production for any media content. </span>
-      </div>
-      <div className="v1_993">
-      </div>
-      <div className="v1_994">
-        <span className="v1_995">Location Sound</span>
-        <span className="v1_996">Production Sound engineering for interviews, advertisements, feature films etc.</span>
-      </div>
-      <div className="v1_998">
-      </div>
-      <div className="v1_999">
-        <span className="v1_1000">Music Mixing/Mastering </span>
-        <span className="v1_1001">Crafting professional, release-ready mixes and mastering them to the industry standards for any digital platform or other distribution option.</span>
-      </div>
-      <div className="v4_86">
-      </div>
-      <div className="v4_20">
-      </div>
-      <div className="v4_87">
-      </div>
-      <span className="v1_1015">Film Audio Post/Mixing</span>
-      <span className="v4_21">Music Mixing/Mastering</span>
-      <span className="v4_53">Location Sound</span>
-      <div className="v4_22">
-        <div className="v4_23">
-          <span className="v4_24">Skills</span>
-          <span className="v4_25">Studio Recording, Noise Reduction, Pitch Correction and vocal editing, Gain staging, Vocal and instrumental processing, Mastering.</span>
-        </div>
-        <div className="v4_26">
-          <span className="v4_27">Tools</span>
-          <span className="v4_28">Pro Tools, Ableton Live, Logic Pro, Audacity, Izotope Rx, Melodyne</span>
-        </div>
-        <div className="v4_29">
-          <span className="v4_30">Anything else?</span>
-          <span className="v4_31">I also have experience in podcast mixing, live audio engineering, songwriting and production, so don’t hesitate to contact me for any other requests connected with audio.</span>
-        </div>
-      </div>
-      <div className="v4_54">
-        <div className="v4_55">
-          <span className="v4_56">Location</span>
-          <span className="v4_57">Currently in Belgrade, Serbia. Ready to travel for bigger projects. </span>
-        </div>
-      </div>
-      <div className="v4_58">
-        <span className="v4_59">Skills</span>
-        <span className="v4_60">Production Mixer, Boom Operator, Lavalier Recording, Production assistant</span>
-      </div>
-      <div className="v4_33">
-        <span className="v4_34">Contact</span>
-      </div>
-      <div className="v4_35">
-        <span className="v4_36">More of My Work</span>
-      </div>
-      <div className="v4_64">
-        <div className="v4_65">
-          <span className="v4_66">Contact </span>
-        </div>
-        <div className="v4_67">
-          <span className="v4_68">My work</span>
-        </div>
-      </div>
-      <div className="v1_1031">
-        <span className="v1_1037">Contacts</span>
-        <div className="v1_955">
-        </div>
-        <div className="v1_956">
-          <div className="name">
-          </div>
-        </div>
-        <div className="v1_960">
-          <div className="v1_961">
-            <div className="name">
-            </div>
-          </div>
-        </div>
-        <div className="v1_966">
-          <div className="name">
-          </div>
-        </div>
-        <div className="v1_970">
-          <div className="v1_971">
-            <div className="name">
-            </div>
-          </div>
-        </div>
-        <span className="v35_49">+23123123123skjdalkdja@gmail.com</span>
-      </div>
-      <div className="v1_1039">
-        <span className="v1_1040">Grigory Gushcha </span>
-        <span className="v1_1041">Audio Producer/EngineerBelgrade, Serbia</span>
-      </div>
-      <span className="v4_2"> Film Audio Post/Mixing, Location Sound,  Music Mixing/Mastering</span>
-      <div className="v1_872">
-        <div className="v1_873">
-        </div>
-        <span className="v1_879">Recorder </span>
-        <span className="v1_880">Zoom F6 </span>
-      </div>
-      <div className="v1_881">
-        <div className="v1_882">
-          <div className="v1_883">
-          </div>
-        </div>
-        <span className="v1_886">Shotgun Microphone</span>
-        <span className="v1_887">Rode NTG-3 Rode Blimp</span>
-      </div>
-      <div className="v1_889">
-        <div className="v1_890">
-        </div>
-        <span className="v1_893">Lavalier Microphone</span>
-        <span className="v1_894">DPA 4060</span>
-      </div>
-      <div className="v35_2">
-        <div className="v35_3">
-        </div>
-        <span className="v35_6">Software</span>
-        <span className="v35_7">Pro Tools, Izotope Rx, Ableton, Final Cut</span>
-      </div>
-      <span className="v1_901">Equipment</span>
-      <span className="v7_8">About</span>
-      <div className="v7_9">
-      </div>
-      <span className="v7_11">Hello there! I am Grigory, an audio producer providing technical audio support for film crews and musicians. My goal is to eliminate any technical audio difficulties that can stand in the way of your creativity, as well as provide great sound for the stories that you aim to share.
-        I hold a Bachelor’s degree in Audio Production from the University of Hertfordshire. I also studied audio and music production at SAE Institute Belgrade (2023–2025), Moscow Music School (2020–2023), and completed the Art of Mixing course through Berklee Online.
-
-        Outside of work, I write music, play D&D, and collect video games.</span>
-      <div className="v8_120">
-      </div>
-      <div className="v8_119">
-      </div>
-      <div className="v17_3">
-      </div>
-      <div className="v17_5">
-      </div>
-      <div className="v17_9">
-      </div>
-      <div className="v17_10">
-      </div>
-      <div className="v35_24">
-        <div className="v35_25">
-          <span className="v35_26">Skills</span>
-          <span className="v35_27">Synchronisation, dialogue editing, noise reduction,sound restoration, sound design, vocal processing, Foley, mixing in stereo and surround (5.1) systems, managing a production team</span>
-        </div>
-        <div className="v35_28">
-          <span className="v35_29">Tools</span>
-          <span className="v35_30">Pro Tools, Ableton Live, Logic Pro, Izotope RX, Audacity, Final Cut</span>
-        </div>
-        <div className="v35_31">
-          <span className="v35_32">Music</span>
-          <span className="v35_33">If music is needed I work directly with sound designers and composers, so you don’t have to find them.</span>
-        </div>
-      </div>
-      <div className="v35_34">
-        <div className="v35_35">
-          <span className="v35_36">Contact</span>
-        </div>
-        <div className="v35_37">
-          <span className="v35_38">More of my work</span>
-        </div>
-      </div>
-      <div className="v35_41">
-      </div>
-      <span className="v35_48">Mixing Demo Reel</span>
+      </section>
     </div>
   );
 };

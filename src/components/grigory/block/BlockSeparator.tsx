@@ -11,7 +11,7 @@ const BlockSeparator: React.FC<BlockSeparatorProps> = ({ className }) => (
     fill="none"
     aria-hidden="true"
     focusable="false"
-    className={`w-full h-auto ${className ?? ''}`}
+    className={`w-100vw h-auto min-[1400px]:scale-y-[0.6] min-[1800px]:scale-y-[0.4] min-[2400px]::scale-y-[0.2] min-[3000px]:scale-y-[0.17] absolute left-0 right-0 bottom-0 ${className ?? ''}`}
   >
     <path
       d="M 0 7 C 35 0, 65 0, 100 4 C 135 7, 165 7, 200 4 C 235 0, 265 0, 300 4 C 335 7, 365 7, 400 4 C 435 0, 465 0, 500 4 C 535 7, 565 7, 600 4"

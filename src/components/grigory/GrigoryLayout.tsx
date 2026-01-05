@@ -1,13 +1,14 @@
 import { PropsWithChildren } from 'react'
-import { Tiny5 } from 'next/font/google'
+import { Inter } from 'next/font/google'
 
+import '@/components/grigory/GrigoryLayout.css'
 import { getT } from '@/hooks/useT/getT'
 import { PageWithLocale } from '@/types/PageWithLocale'
 import { getLocale } from '@/cache/cacheLocale'
 import { MetadataLayoutProps } from '@/types/MetadataProps'
 import { BACKGROUNDS } from '@/constants/backgrounds'
 
-const tiny5 = Tiny5({
+const inter = Inter({
   subsets: ['latin', 'cyrillic'],
   weight: '400'
 })
@@ -23,11 +24,9 @@ export const generateGrigoryMetadata = async (_props: MetadataLayoutProps) => {
 }
 
 const GrigoryLayout: PageWithLocale<PropsWithChildren> = async ({ children }) => {
-  getLocale()
-  console.log('RENDERING Grigory LAYOUT')
   return (
-    <html lang={getLocale()}>
-      <body className={`${tiny5.className} antialiased min-h-screen ${BACKGROUNDS.grigory} transition-background duration-1000`}> 
+    <html lang={getLocale()} className='text-[18px]'>
+      <body className={`grigory-layout ${inter.className} antialiased min-h-screen ${BACKGROUNDS.grigory} transition-background duration-1000`}> 
         {children}
       </body>
     </html>

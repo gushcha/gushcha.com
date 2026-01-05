@@ -10,11 +10,11 @@ const Heading: React.FC<HeadingProps> = ({ level, children, className = '' }) =>
   const getClassName = () => {
     switch (level) {
       case 1:
-        return 'text-[26px] sm:text-[30px] font-bold text-shadow text-center sm:text-left pb-2'
+        return 'text-2xl sm:text-3xl font-bold text-shadow text-center sm:text-left pb-2'
       case 2:
-        return 'text-[20px] sm:text-[26px] text-center sm:text-left pb-2'
+        return 'text-xl sm:text-2xl text-center sm:text-left pb-2'
       case 3:
-        return 'text-[18px] text-center sm:text-left pb-2'
+        return 'text-lg text-center sm:text-left pb-2'
       case 4:
         return 'text-base text-center sm:text-left pb-2' // 16px
       case 5:
