@@ -10,7 +10,7 @@ export const Grigory: React.FC = async () => {
   return (
     <div>
       {/* Navbar */}
-      <Block hideSeparator>
+      <Block id="about">
         <Navbar />
         <Heading level={1}>
           Grigory Gushcha
@@ -25,24 +25,30 @@ export const Grigory: React.FC = async () => {
           Film Audio Post/Mixing, Location Sound, Music Mixing/Mastering
         </p>
       </Block>
-      <Block className='mt-6'>
+      <Block className='mt-6 hidden sm:block' separatorVariant={0}>
         <Heading level={2}>Services</Heading>
-        <div className="grid md:grid-cols-3 gap-8">
-          <div>
-            <Image src="/assets/grigory/img/v1_988.png" alt="Film Audio Post/Mixing" className="rounded-lg w-full h-64 object-cover mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Film Audio Post/Mixing</h3>
-            <p className="text-gray-600">Professional Audio post-production for any media content.</p>
-          </div>
-          <div>
-            <Image src="/assets/grigory/img/v1_993.png" alt="Location Sound" className="rounded-lg w-full h-64 object-cover mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Location Sound</h3>
-            <p className="text-gray-600">Production Sound engineering for interviews, advertisements, feature films etc.</p>
-          </div>
-          <div>
-            <Image src="/assets/grigory/img/v1_998.png" alt="Music Mixing/Mastering" className="rounded-lg w-full h-64 object-cover mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Music Mixing/Mastering</h3>
-            <p className="text-gray-600">Crafting professional, release-ready mixes and mastering them to the industry standards for any digital platform or other distribution option.</p>
-          </div>
+        <div className="grid sm:grid-cols-3 gap-8">
+          <a href="#film_audio_post_mixing" className="block transition-all duration-300 hover:translate-y-[-8px] hover:shadow-2xl rounded-lg p-2 -m-2">
+            <div>
+              <Image enablePreview={false} src="/assets/grigory/img/v1_988.png" alt="Film Audio Post/Mixing" className="rounded-lg w-full h-64 object-cover mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Film Audio Post/Mixing</h3>
+              <p className="text-gray-600">Professional Audio post-production for any media content.</p>
+            </div>
+          </a>
+          <a href="#location_sound" className="block transition-all duration-300 hover:translate-y-[-8px] hover:shadow-2xl rounded-lg p-2 -m-2">
+            <div>
+              <Image enablePreview={false} src="/assets/grigory/img/v1_993.png" alt="Location Sound" className="rounded-lg w-full h-64 object-cover mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Location Sound</h3>
+              <p className="text-gray-600">Production Sound engineering for interviews, advertisements, feature films etc.</p>
+            </div>
+          </a>
+          <a href="#music_mixing" className="block transition-all duration-300 hover:translate-y-[-8px] hover:shadow-2xl rounded-lg p-2 -m-2">
+            <div>
+              <Image enablePreview={false} src="/assets/grigory/img/v1_998.png" alt="Music Mixing/Mastering" className="rounded-lg w-full h-64 object-cover mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Music Mixing/Mastering</h3>
+              <p className="text-gray-600">Crafting professional, release-ready mixes and mastering them to the industry standards for any digital platform or other distribution option.</p>
+            </div>
+          </a>
         </div>
 
         <Heading level={2}>About</Heading>
@@ -64,7 +70,7 @@ export const Grigory: React.FC = async () => {
         </div>
       </Block>
 
-      <Block>
+      <Block id="film_audio_post_mixing" separatorVariant={1}>
         {/* Skills & Tools Section */}
         <section className="container mx-auto px-4 py-12">
           <Heading level={2} className="mb-8">Film Audio Post/Mixing</Heading>
@@ -91,7 +97,7 @@ export const Grigory: React.FC = async () => {
           <p>If music is needed I work directly with sound designers and composers, so you don&apos;t have</p>
         </section>
       </Block>
-      <Block>
+      <Block id="location_sound" separatorVariant={2}>
         <Heading level={2}>Location Sound</Heading>
         <div>
 
@@ -135,7 +141,7 @@ export const Grigory: React.FC = async () => {
         </div>
       </Block>
       {/* Highlight Section with Banner Image */}
-      <section className="container mx-auto px-4 py-12">
+      <section className="container mx-auto px-4 py-12" id="music_mixing">
         <Heading level={2}>Music Mixing/Mastering</Heading>
         <div className="flex justify-center">
           <Image src="/assets/grigory/img/v35_41.png" alt="Mixing Demo Reel Banner" className="rounded-lg w-full max-w-4xl h-48 object-cover shadow-lg" />
@@ -172,7 +178,7 @@ export const Grigory: React.FC = async () => {
       </section>
       
       
-      <section className="container mx-auto px-4 py-12">
+      <section className="container mx-auto px-4 py-12" id="contacts">
         <Heading level={2} className="mb-8">Contacts</Heading>
         <div>
           <p className="text-lg font-semibold">+23123123123</p>

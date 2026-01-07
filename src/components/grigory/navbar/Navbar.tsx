@@ -1,4 +1,5 @@
 import {FC} from "react";
+import Button from "@/components/grigory/button/Button";
 
 const Navbar: FC = () => {
   return (
@@ -7,7 +8,7 @@ const Navbar: FC = () => {
       <a href="#film_audio_post_mixing">Film Audio Post/Mixing</a>
       <a href="#location_sound">Location Sound</a>
       <a href="#music_mixing">Music Mixing</a>
-      <a href="#contacts">Contacts</a>
+      <Button href="#contacts">Contacts</Button>
     </nav>
   )
 }
