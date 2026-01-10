@@ -16,11 +16,11 @@ const Heading: React.FC<HeadingProps> = ({ level, children, className = '' }) =>
       case 3:
         return 'text-lg text-center sm:text-left pb-2'
       case 4:
-        return 'text-base text-center sm:text-left pb-2' // 16px
+        return 'text-base text-center sm:text-left pb-2'
       case 5:
-        return 'text-sm text-center sm:text-left pb-2' // 14px
+        return 'text-sm text-center sm:text-left pb-2'
       case 6:
-        return 'text-xs text-center sm:text-left pb-2' // 12px
+        return 'text-xs text-center sm:text-left pb-2'
       default:
         return 'text-base text-center sm:text-left pb-2'
     }

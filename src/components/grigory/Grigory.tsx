@@ -9,10 +9,9 @@ import { SocialIcon } from 'react-social-icons'
 export const Grigory: React.FC = async () => {
   return (
     <div>
-      {/* Navbar */}
-      <Block id="about">
-        <Navbar />
-        <Heading level={1}>
+      <Navbar />
+      <Block className='lg:mt-20'>
+        <Heading level={1} className='px-14 sm:px-0'>
           Grigory Gushcha
         </Heading>
         <p className='text-slate-600 pt-2'>
@@ -25,79 +24,83 @@ export const Grigory: React.FC = async () => {
           Film Audio Post/Mixing, Location Sound, Music Mixing/Mastering
         </p>
       </Block>
-      <Block className='mt-6 hidden sm:block' separatorVariant={0}>
-        <Heading level={2}>Services</Heading>
-        <div className="grid sm:grid-cols-3 gap-8">
-          <a href="#film_audio_post_mixing" className="block transition-all duration-300 hover:translate-y-[-8px] hover:shadow-2xl rounded-lg p-2 -m-2">
-            <div>
-              <Image enablePreview={false} src="/assets/grigory/img/v1_988.png" alt="Film Audio Post/Mixing" className="rounded-lg w-full h-64 object-cover mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Film Audio Post/Mixing</h3>
-              <p className="text-gray-600">Professional Audio post-production for any media content.</p>
-            </div>
-          </a>
-          <a href="#location_sound" className="block transition-all duration-300 hover:translate-y-[-8px] hover:shadow-2xl rounded-lg p-2 -m-2">
-            <div>
-              <Image enablePreview={false} src="/assets/grigory/img/v1_993.png" alt="Location Sound" className="rounded-lg w-full h-64 object-cover mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Location Sound</h3>
-              <p className="text-gray-600">Production Sound engineering for interviews, advertisements, feature films etc.</p>
-            </div>
-          </a>
-          <a href="#music_mixing" className="block transition-all duration-300 hover:translate-y-[-8px] hover:shadow-2xl rounded-lg p-2 -m-2">
-            <div>
-              <Image enablePreview={false} src="/assets/grigory/img/v1_998.png" alt="Music Mixing/Mastering" className="rounded-lg w-full h-64 object-cover mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Music Mixing/Mastering</h3>
-              <p className="text-gray-600">Crafting professional, release-ready mixes and mastering them to the industry standards for any digital platform or other distribution option.</p>
-            </div>
-          </a>
-        </div>
-
-        <Heading level={2}>About</Heading>
-        <div className="flex flex-col md:flex-row items-center gap-8">
-          <div className="flex-1 flex flex-col gap-4 text-slate-600">
-            <p>
-              Hello there! I am Grigory, an audio producer providing technical audio support for film crews and musicians. My goal is to eliminate any technical audio difficulties that can stand in the way of your creativity, as well as provide great sound for the stories that you aim to share.
-            </p>
-            <p>
-              I hold a Bachelor’s degree in Audio Production from the University of Hertfordshire. I also studied audio and music production at SAE Institute Belgrade (2023–2025), Moscow Music School (2020–2023), and completed the Art of Mixing course through Berklee Online.
-            </p>
-            <p>
-              Outside of work, I write music, play D&D, and collect video games.
-            </p>
+      <Block className='mt-4' separatorVariant={0}>
+        <div className='hidden lg:block'>
+          <Heading level={2}>Services</Heading>
+          <div className="grid sm:grid-cols-3 gap-8">
+            <a href="#film_audio_post_mixing" className="block transition-all duration-300 hover:translate-y-[-8px] hover:shadow-2xl rounded-lg p-2 -m-2">
+              <div>
+                <Image enablePreview={false} src="/assets/grigory/img/v1_988.png" alt="Film Audio Post/Mixing" className="rounded-lg w-full h-64 object-cover mb-4" />
+                <h3 className="text-xl font-semibold mb-2">Film Audio Post/Mixing</h3>
+                <p className="text-gray-600">Professional Audio post-production for any media content.</p>
+              </div>
+            </a>
+            <a href="#location_sound" className="block transition-all duration-300 hover:translate-y-[-8px] hover:shadow-2xl rounded-lg p-2 -m-2">
+              <div>
+                <Image enablePreview={false} src="/assets/grigory/img/v1_993.png" alt="Location Sound" className="rounded-lg w-full h-64 object-cover mb-4" />
+                <h3 className="text-xl font-semibold mb-2">Location Sound</h3>
+                <p className="text-gray-600">Production Sound engineering for interviews, advertisements, feature films etc.</p>
+              </div>
+            </a>
+            <a href="#music_mixing" className="block transition-all duration-300 hover:translate-y-[-8px] hover:shadow-2xl rounded-lg p-2 -m-2">
+              <div>
+                <Image enablePreview={false} src="/assets/grigory/img/v1_998.png" alt="Music Mixing/Mastering" className="rounded-lg w-full h-64 object-cover mb-4" />
+                <h3 className="text-xl font-semibold mb-2">Music Mixing/Mastering</h3>
+                <p className="text-gray-600">Crafting professional, release-ready mixes and mastering them to the industry standards for any digital platform or other distribution option.</p>
+              </div>
+            </a>
           </div>
-          <div className="flex-1 flex justify-center">
-            <Image src="/assets/grigory/img/about.png" alt="Grigory Gushcha" className="rounded-lg w-80 h-80 object-cover" />
+        </div>
+        <div className='relative'>
+          <span id="about" className='absolute top-[-1000px] lg:top-[-80px]' />
+          <Heading level={2}>About</Heading>
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="flex-1 flex flex-col gap-4 text-slate-600">
+              <p>
+                Hello there! I am Grigory, an audio producer providing technical audio support for film crews and musicians. My goal is to eliminate any technical audio difficulties that can stand in the way of your creativity, as well as provide great sound for the stories that you aim to share.
+              </p>
+              <p>
+                I hold a Bachelor’s degree in Audio Production from the University of Hertfordshire. I also studied audio and music production at SAE Institute Belgrade (2023–2025), Moscow Music School (2020–2023), and completed the Art of Mixing course through Berklee Online.
+              </p>
+              <p>
+                Outside of work, I write music, play D&D, and collect video games.
+              </p>
+            </div>
+            <div className="flex-1 flex justify-center">
+              <Image src="/assets/grigory/img/about.png" alt="Grigory Gushcha" className="rounded-lg w-80 h-80 object-cover" />
+            </div>
           </div>
         </div>
       </Block>
 
-      <Block id="film_audio_post_mixing" separatorVariant={1}>
+      <Block separatorVariant={1}>
+        <span id="film_audio_post_mixing" className='absolute top-[4px] lg:top-[-80px]' />
         {/* Skills & Tools Section */}
-        <section className="container mx-auto px-4 py-12">
-          <Heading level={2} className="mb-8">Film Audio Post/Mixing</Heading>
-          <Image src="/assets/grigory/img/v4_86.png" alt="Studio Session" className="rounded-lg w-full max-w-2xl h-80 object-cover" />
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h4 className="text-lg font-semibold mb-1">Skills</h4>
-              <ul className="list-disc list-inside text-gray-600">
-                <li>Studio Recording, Noise Reduction, Pitch Correction and vocal editing</li>
-                <li>Gain staging, Vocal and instrumental processing, Mastering</li>
-                <li>Synchronisation, dialogue editing, sound restoration, sound design</li>
-                <li>Foley, mixing in stereo and surround (5.1) systems</li>
-                <li>Managing a production team</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-1">Tools</h4>
-              <ul className="list-disc list-inside text-gray-600">
-                <li>Pro Tools, Ableton Live, Logic Pro, Audacity, Izotope Rx, Melodyne, Final Cut</li>
-              </ul>
-            </div>
+        <Heading level={2} className='px-14 sm:px-0'>Film Audio Post/Mixing</Heading>
+        <Image src="/assets/grigory/img/v4_86.png" alt="Studio Session" className="rounded-lg w-full max-w-2xl h-80 object-cover" />
+        <div className="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 className="text-lg font-semibold mb-1">Skills</h4>
+            <ul className="list-disc list-inside text-gray-600">
+              <li>Studio Recording, Noise Reduction, Pitch Correction and vocal editing</li>
+              <li>Gain staging, Vocal and instrumental processing, Mastering</li>
+              <li>Synchronisation, dialogue editing, sound restoration, sound design</li>
+              <li>Foley, mixing in stereo and surround (5.1) systems</li>
+              <li>Managing a production team</li>
+            </ul>
           </div>
-          <Heading level={4}>Music</Heading>
-          <p>If music is needed I work directly with sound designers and composers, so you don&apos;t have</p>
-        </section>
+          <div>
+            <h4 className="text-lg font-semibold mb-1">Tools</h4>
+            <ul className="list-disc list-inside text-gray-600">
+              <li>Pro Tools, Ableton Live, Logic Pro, Audacity, Izotope Rx, Melodyne, Final Cut</li>
+            </ul>
+          </div>
+        </div>
+        <Heading level={4}>Music</Heading>
+        <p>If music is needed I work directly with sound designers and composers, so you don&apos;t have</p>
       </Block>
-      <Block id="location_sound" separatorVariant={2}>
+      <Block separatorVariant={2}>
+        <span id="location_sound" className='absolute top-[4px] lg:top-[-80px]' />
         <Heading level={2}>Location Sound</Heading>
         <div>
 
@@ -141,8 +144,9 @@ export const Grigory: React.FC = async () => {
         </div>
       </Block>
       {/* Highlight Section with Banner Image */}
-      <section className="container mx-auto px-4 py-12" id="music_mixing">
-        <Heading level={2}>Music Mixing/Mastering</Heading>
+      <Block>
+        <span id="music_mixing" className='absolute top-[4px] lg:top-[-80px]' />
+        <Heading level={2} className='px-12 sm:px-0'>Music Mixing/Mastering</Heading>
         <div className="flex justify-center">
           <Image src="/assets/grigory/img/v35_41.png" alt="Mixing Demo Reel Banner" className="rounded-lg w-full max-w-4xl h-48 object-cover shadow-lg" />
         </div>
@@ -175,10 +179,11 @@ export const Grigory: React.FC = async () => {
           </ul>
         </div>
         <Image src="/assets/grigory/img/v4_20.png" alt="Mixing Console" className="rounded-lg w-full max-w-xl h-80 object-cover" />
-      </section>
+      </Block>
       
       
-      <section className="container mx-auto px-4 py-12" id="contacts">
+      <section className="relative">
+        <span id="contacts" className='absolute top-[4px] lg:top-[-80px]' />
         <Heading level={2} className="mb-8">Contacts</Heading>
         <div>
           <p className="text-lg font-semibold">+23123123123</p>

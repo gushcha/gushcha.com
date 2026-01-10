@@ -3,9 +3,9 @@
 }
 
 .grigory-layout a {
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 .grigory-layout a:hover {
-  color: #777;
+  color: #b95b03;
 }
