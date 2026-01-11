@@ -3,6 +3,7 @@ import React from 'react'
 import Navbar from '@/components/grigory/navbar/Navbar'
 import Block from '@/components/grigory/block/Block'
 import Heading from '@/components/shared/heading/Heading'
+import HeadingLarge from '@/components/shared/heading/HeadingLarge'
 import Image from '@/components/shared/image/Image'
 import { SocialIcon } from 'react-social-icons'
 
@@ -11,9 +12,9 @@ export const Grigory: React.FC = async () => {
     <div>
       <Navbar />
       <Block className='lg:mt-20'>
-        <Heading level={1} className='px-14 sm:px-0'>
+        <HeadingLarge level={1} className='px-14 sm:px-0'>
           Grigory Gushcha
-        </Heading>
+        </HeadingLarge>
         <p className='text-slate-600 pt-2'>
           Audio Producer/Engineer
         </p>
@@ -26,7 +27,7 @@ export const Grigory: React.FC = async () => {
       </Block>
       <Block className='mt-4' separatorVariant={0}>
         <div className='hidden lg:block'>
-          <Heading level={2}>Services</Heading>
+          <HeadingLarge level={2}>Services</HeadingLarge>
           <div className="grid sm:grid-cols-3 gap-8">
             <a href="#film_audio_post_mixing" className="block transition-all duration-300 hover:translate-y-[-8px] hover:shadow-2xl rounded-lg p-2 -m-2">
               <div>
@@ -51,23 +52,23 @@ export const Grigory: React.FC = async () => {
             </a>
           </div>
         </div>
-        <div className='relative'>
+        <div className='relative lg:mt-4'>
           <span id="about" className='absolute top-[-1000px] lg:top-[-80px]' />
-          <Heading level={2}>About</Heading>
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="flex-1 flex flex-col gap-4 text-slate-600">
-              <p>
+          <div className="flex flex-col md:flex-row gap-4 lg:gap-20 md:justify-between">
+            <div className="flex flex-col gap-4 max-w-[900px]">
+              <HeadingLarge level={2}>About</HeadingLarge>
+              <p className="text-slate-600">
                 Hello there! I am Grigory, an audio producer providing technical audio support for film crews and musicians. My goal is to eliminate any technical audio difficulties that can stand in the way of your creativity, as well as provide great sound for the stories that you aim to share.
               </p>
-              <p>
+              <p className="text-slate-600">
                 I hold a Bachelor’s degree in Audio Production from the University of Hertfordshire. I also studied audio and music production at SAE Institute Belgrade (2023–2025), Moscow Music School (2020–2023), and completed the Art of Mixing course through Berklee Online.
               </p>
-              <p>
+              <p className='text-slate-600'>
                 Outside of work, I write music, play D&D, and collect video games.
               </p>
             </div>
-            <div className="flex-1 flex justify-center">
-              <Image src="/assets/grigory/img/about.png" alt="Grigory Gushcha" className="rounded-lg w-80 h-80 object-cover" />
+            <div className="flex min-w-72 max-w-92">
+              <Image src="/assets/grigory/img/about.png" alt="Grigory Gushcha" className="rounded-lg w-full object-cover" />
             </div>
           </div>
         </div>
@@ -76,7 +77,7 @@ export const Grigory: React.FC = async () => {
       <Block separatorVariant={1}>
         <span id="film_audio_post_mixing" className='absolute top-[4px] lg:top-[-80px]' />
         {/* Skills & Tools Section */}
-        <Heading level={2} className='px-14 sm:px-0'>Film Audio Post/Mixing</Heading>
+        <HeadingLarge level={2} className='px-14 sm:px-0'>Film Audio Post/Mixing</HeadingLarge>
         <Image src="/assets/grigory/img/v4_86.png" alt="Studio Session" className="rounded-lg w-full max-w-2xl h-80 object-cover" />
         <div className="grid md:grid-cols-2 gap-8">
           <div>
@@ -101,7 +102,7 @@ export const Grigory: React.FC = async () => {
       </Block>
       <Block separatorVariant={2}>
         <span id="location_sound" className='absolute top-[4px] lg:top-[-80px]' />
-        <Heading level={2}>Location Sound</Heading>
+        <HeadingLarge level={2}>Location Sound</HeadingLarge>
         <div>
 
           <Heading level={4}>Location</Heading>
@@ -111,7 +112,7 @@ export const Grigory: React.FC = async () => {
         </div>
         <Image src="/assets/grigory/img/v4_87.jpg" alt="Recording Room" className="rounded-lg w-full max-w-lg h-80 object-cover" />
 
-        <Heading level={2} className="mb-8">Equipment</Heading>
+        <HeadingLarge level={3} displayLevel={2} className="mb-8">Equipment</HeadingLarge>
         <div className="grid md:grid-cols-2 gap-8">
           <div>
             <div className="flex items-center gap-4 mb-2">
@@ -146,7 +147,7 @@ export const Grigory: React.FC = async () => {
       {/* Highlight Section with Banner Image */}
       <Block>
         <span id="music_mixing" className='absolute top-[4px] lg:top-[-80px]' />
-        <Heading level={2} className='px-12 sm:px-0'>Music Mixing/Mastering</Heading>
+        <HeadingLarge level={2} className='px-12 sm:px-0'>Music Mixing/Mastering</HeadingLarge>
         <div className="flex justify-center">
           <Image src="/assets/grigory/img/v35_41.png" alt="Mixing Demo Reel Banner" className="rounded-lg w-full max-w-4xl h-48 object-cover shadow-lg" />
         </div>
@@ -184,16 +185,16 @@ export const Grigory: React.FC = async () => {
       
       <section className="relative">
         <span id="contacts" className='absolute top-[4px] lg:top-[-80px]' />
-        <Heading level={2} className="mb-8">Contacts</Heading>
+        <HeadingLarge level={2} className="mb-8">Contacts</HeadingLarge>
         <div>
           <p className="text-lg font-semibold">+23123123123</p>
           <p className="text-lg font-semibold">skjdalkdja@gmail.com</p>
         </div>
-        <div>
-          <SocialIcon url="https://facebook.com" />
-          <SocialIcon url="https://linkedin.com" />
-          <SocialIcon url="https://youtube.com" />
-          <SocialIcon url="https://instagram.com" />
+        <div className="flex gap-4">
+          <SocialIcon className="filter grayscale transition duration-300 ease-in-out hover:grayscale-0 hover:scale-105" url="https://facebook.com" />
+          <SocialIcon className="filter grayscale transition duration-300 ease-in-out hover:grayscale-0 hover:scale-105" url="https://linkedin.com" />
+          <SocialIcon className="filter grayscale transition duration-300 ease-in-out hover:grayscale-0 hover:scale-105" url="https://youtube.com" />
+          <SocialIcon className="filter grayscale transition duration-300 ease-in-out hover:grayscale-0 hover:scale-105" url="https://instagram.com" />
         </div>
       </section>
 

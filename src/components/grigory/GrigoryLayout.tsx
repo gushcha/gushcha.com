@@ -25,7 +25,7 @@ export const generateGrigoryMetadata = async (_props: MetadataLayoutProps) => {
 
 const GrigoryLayout: PageWithLocale<PropsWithChildren> = async ({ children }) => {
   return (
-    <html lang={getLocale()} className='text-[18px] scroll-smooth'>
+    <html lang={getLocale()} className='text-[18px] 3xl:text-[24px] scroll-smooth'>
       <body className={`grigory-layout ${inter.className} antialiased min-h-screen ${BACKGROUNDS.grigory} transition-background duration-1000`}> 
         {children}
       </body>

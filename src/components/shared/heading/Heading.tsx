@@ -6,7 +6,11 @@ interface HeadingProps {
   className?: string
 }
 
-const Heading: React.FC<HeadingProps> = ({ level, children, className = '' }) => {
+const Heading: React.FC<HeadingProps> = ({ 
+  level, 
+  children, 
+  className = '',
+}) => {
   const getClassName = () => {
     switch (level) {
       case 1:

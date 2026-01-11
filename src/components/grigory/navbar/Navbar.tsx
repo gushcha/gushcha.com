@@ -40,7 +40,7 @@ const Navbar: FC = () => {
       </nav>
 
       {/* Mobile Navigation - Black Square */}
-      <div className="lg:hidden fixed top-4 right-4 z-50" ref={dropdownRef}>
+      <div className="lg:hidden fixed top-3 right-3 z-50" ref={dropdownRef}>
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="flex items-center justify-center w-11 h-11 bg-black rounded-xl shadow-lg hover:opacity-80 transition-opacity"
