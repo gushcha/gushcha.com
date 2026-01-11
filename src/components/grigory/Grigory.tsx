@@ -29,22 +29,22 @@ export const Grigory: React.FC = async () => {
         <div className='hidden lg:block'>
           <HeadingLarge level={2}>Services</HeadingLarge>
           <div className="grid sm:grid-cols-3 gap-8">
-            <a href="#film_audio_post_mixing" className="block transition-all duration-300 hover:translate-y-[-8px] hover:shadow-2xl rounded-lg p-2 -m-2">
-              <div>
+            <a href="#film_audio_post_mixing">
+              <div className='transition-all duration-200 hover:translate-y-[-8px] hover:shadow-2xl rounded-lg p-2 -m-2'>
                 <Image enablePreview={false} src="/assets/grigory/img/v1_988.png" alt="Film Audio Post/Mixing" className="rounded-lg w-full h-64 object-cover mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Film Audio Post/Mixing</h3>
                 <p className="text-gray-600">Professional Audio post-production for any media content.</p>
               </div>
             </a>
-            <a href="#location_sound" className="block transition-all duration-300 hover:translate-y-[-8px] hover:shadow-2xl rounded-lg p-2 -m-2">
-              <div>
+            <a href="#location_sound">
+              <div className='transition-all duration-200 hover:translate-y-[-8px] hover:shadow-2xl rounded-lg p-2 -m-2'>
                 <Image enablePreview={false} src="/assets/grigory/img/v1_993.png" alt="Location Sound" className="rounded-lg w-full h-64 object-cover mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Location Sound</h3>
                 <p className="text-gray-600">Production Sound engineering for interviews, advertisements, feature films etc.</p>
               </div>
             </a>
-            <a href="#music_mixing" className="block transition-all duration-300 hover:translate-y-[-8px] hover:shadow-2xl rounded-lg p-2 -m-2">
-              <div>
+            <a href="#music_mixing">
+              <div className='transition-all duration-200 hover:translate-y-[-8px] hover:shadow-2xl rounded-lg p-2 -m-2'>
                 <Image enablePreview={false} src="/assets/grigory/img/v1_998.png" alt="Music Mixing/Mastering" className="rounded-lg w-full h-64 object-cover mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Music Mixing/Mastering</h3>
                 <p className="text-gray-600">Crafting professional, release-ready mixes and mastering them to the industry standards for any digital platform or other distribution option.</p>
