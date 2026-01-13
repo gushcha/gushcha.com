@@ -1,0 +1,11 @@
+.grigory-layout .text-shadow {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.grigory-layout a {
+  transition: color 0.2s ease;
+}
+
+.grigory-layout a:hover {
+  color: #b95b03;
+}
