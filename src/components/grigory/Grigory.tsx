@@ -6,6 +6,8 @@ import Heading from '@/components/shared/heading/Heading'
 import HeadingLarge from '@/components/shared/heading/HeadingLarge'
 import Image from '@/components/shared/image/Image'
 import { SocialIcon } from 'react-social-icons'
+import Skill from '@/components/grigory/skillList/Skill'
+import SkillList from '@/components/grigory/skillList/SkillList'
 
 export const Grigory: React.FC = async () => {
   return (
@@ -76,71 +78,74 @@ export const Grigory: React.FC = async () => {
 
       <Block separatorVariant={1}>
         <span id="film_audio_post_mixing" className='absolute top-[4px] lg:top-[-80px]' />
-        {/* Skills & Tools Section */}
         <HeadingLarge level={2} className='px-14 sm:px-0'>Film Audio Post/Mixing</HeadingLarge>
-        <Image src="/assets/grigory/img/v4_86.png" alt="Studio Session" className="rounded-lg w-full max-w-2xl h-80 object-cover" />
-        <div className="grid md:grid-cols-2 gap-8">
-          <div>
-            <h4 className="text-lg font-semibold mb-1">Skills</h4>
-            <ul className="list-disc list-inside text-gray-600">
-              <li>Studio Recording, Noise Reduction, Pitch Correction and vocal editing</li>
-              <li>Gain staging, Vocal and instrumental processing, Mastering</li>
-              <li>Synchronisation, dialogue editing, sound restoration, sound design</li>
-              <li>Foley, mixing in stereo and surround (5.1) systems</li>
-              <li>Managing a production team</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold mb-1">Tools</h4>
-            <ul className="list-disc list-inside text-gray-600">
-              <li>Pro Tools, Ableton Live, Logic Pro, Audacity, Izotope Rx, Melodyne, Final Cut</li>
-            </ul>
-          </div>
-        </div>
-        <Heading level={4}>Music</Heading>
-        <p>If music is needed I work directly with sound designers and composers, so you don&apos;t have</p>
+        <Image 
+          src="/assets/grigory/img/v4_86.png" 
+          alt="Studio Session" 
+          className="rounded-lg w-full md:max-w-[50%] h-80 object-cover mx-auto mb-5" 
+        />
+        <SkillList className='mx-auto w-full md:max-w-[50%]'>
+          <Skill heading='Skills'>
+            Synchronisation, dialogue editing, noise reduction,sound restoration, sound design, vocal processing, Foley, mixing in stereo and surround (5.1) systems, managing a production team
+          </Skill>
+          <Skill heading='Tools'>
+            Pro Tools, Ableton Live, Logic Pro, Izotope RX, Audacity, Final Cut
+          </Skill>
+          <Skill heading='Music'>
+            If music is needed I work directly with sound designers and composers, so you don’t have to find them.
+          </Skill>
+        </SkillList>
       </Block>
-      <Block separatorVariant={2}>
+
+      <Block>
         <span id="location_sound" className='absolute top-[4px] lg:top-[-80px]' />
         <HeadingLarge level={2}>Location Sound</HeadingLarge>
-        <div>
-
-          <Heading level={4}>Location</Heading>
-          Currently in Belgrade, Serbia. Ready to travel for bigger projects.
-          <Heading level={4}>Skills</Heading>
-          Production Mixer, Boom Operator, Lavalier Recording, Production assistant
+        <div className='flex flex-col md:flex-row gap-8 items-center'>
+          <SkillList className='md:max-w-[50%]'>
+            <Skill heading='Location'>
+              Currently in Belgrade, Serbia. Ready to travel for bigger projects.
+            </Skill>
+            <Skill heading='Skills'>
+              Production Mixer, Boom Operator, Lavalier Recording, Production assistant
+            </Skill>
+          </SkillList>
+          <Image 
+            src="/assets/grigory/img/v4_87.jpg" 
+            alt="Recording Room" 
+            className="rounded-lg object-cover h-80 w-full md:w-[50%]" 
+          />
         </div>
-        <Image src="/assets/grigory/img/v4_87.jpg" alt="Recording Room" className="rounded-lg w-full max-w-lg h-80 object-cover" />
-
-        <HeadingLarge level={3} displayLevel={2} className="mb-8">Equipment</HeadingLarge>
-        <div className="grid md:grid-cols-2 gap-8">
+      </Block>
+      <Block separatorVariant={2}>
+        <HeadingLarge level={3} displayLevel={2}>Equipment</HeadingLarge>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:h-40">
           <div>
             <div className="flex items-center gap-4 mb-2">
               <img src="/assets/grigory/img/v1_873.png" alt="Recorder Icon" className="w-8 h-8" />
               <h4 className="text-lg font-semibold">Recorder</h4>
             </div>
-            <p className="text-gray-600">Zoom F6</p>
+            <p className="text-slate-600">Zoom F6</p>
           </div>
-          <div>
+          <div className='md:self-end'>
             <div className="flex items-center gap-4 mb-2">
               <img src="/assets/grigory/img/v1_882.png" alt="Shotgun Microphone Icon" className="w-8 h-8" />
               <h4 className="text-lg font-semibold">Shotgun Microphone</h4>
             </div>
-            <p className="text-gray-600">Rode NTG-3, Rode Blimp</p>
+            <p className="text-slate-600">Rode NTG-3, Rode Blimp</p>
           </div>
           <div>
             <div className="flex items-center gap-4 mb-2">
-              <img src="/assets/grigory/img/v1_890.png" alt="Lavalier Microphone Icon" className="w-8 h-8" />
+              <img src="/assets/grigory/img/v1_890.jpeg" alt="Lavalier Microphone Icon" className="w-8 h-8" />
               <h4 className="text-lg font-semibold">Lavalier Microphone</h4>
             </div>
-            <p className="text-gray-600">DPA 4060</p>
+            <p className="text-slate-600">DPA 4060</p>
           </div>
-          <div>
+          <div className='md:self-end'>
             <div className="flex items-center gap-4 mb-2">
               <img src="/assets/grigory/img/v35_3.png" alt="Software Icon" className="w-8 h-8" />
               <h4 className="text-lg font-semibold">Software</h4>
             </div>
-            <p className="text-gray-600">Pro Tools, Izotope Rx, Ableton, Final Cut</p>
+            <p className="text-slate-600">Pro Tools, Izotope Rx, Ableton, Final Cut</p>
           </div>
         </div>
       </Block>
@@ -152,33 +157,17 @@ export const Grigory: React.FC = async () => {
           <Image src="/assets/grigory/img/v35_41.png" alt="Mixing Demo Reel Banner" className="rounded-lg w-full max-w-4xl h-48 object-cover shadow-lg" />
         </div>
         <Heading level={2}>Mixing Demo Reel</Heading>
-        <div>
-          <ul>
-            <li>
-              <Heading level={4}>Skills</Heading>
-              <p>
-                Studio Recording, Noise Reduction, Pitch Correction and vocal editing, Gain staging, Vocal and instrumental processing, Mastering.
-              </p>
-            </li>
-            <li>
-              <Heading level={4}>Tools</Heading>
-              <p>
-                Studio Recording, Noise Reduction, Pitch Correction and vocal editing, Gain staging, Vocal and instrumental processing, Mastering.
-              </p>
-            </li>
-            <li>
-              <Heading level={4}>Anyting else?</Heading>
-              <p>
-                I also have experience in podcast mixing. live audio engineering, songwriting and production, so don&apos;t hesitate to contact me for any other requests connected with audio.
-              </p>
-            </li>
-            <li>
-              <p>
-                <button>Contact</button> <button>More Of my work</button>
-              </p>
-            </li>
-          </ul>
-        </div>
+        <SkillList>
+          <Skill heading='Skills'>
+            Studio Recording, Noise Reduction, Pitch Correction and vocal editing, Gain staging, Vocal and instrumental processing, Mastering.
+          </Skill>
+          <Skill heading='Tools'>
+            Pro Tools, Ableton Live, Logic Pro, Audacity, Izotope Rx, Melodyne
+          </Skill>
+          <Skill heading='Anything else?'>
+            I also have experience in podcast mixing, live audio engineering, songwriting and production, so don’t hesitate to contact me for any other requests connected with audio.
+          </Skill>
+        </SkillList>
         <Image src="/assets/grigory/img/v4_20.png" alt="Mixing Console" className="rounded-lg w-full max-w-xl h-80 object-cover" />
       </Block>
       
