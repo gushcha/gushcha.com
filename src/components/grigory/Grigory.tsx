@@ -112,7 +112,7 @@ export const Grigory: React.FC = async () => {
           <Image 
             src="/assets/grigory/img/v4_87.jpg" 
             alt="Recording Room" 
-            className="rounded-lg object-cover h-80 w-full md:w-[50%]" 
+            className="rounded-lg w-full md:max-w-[50%] h-80 object-cover mx-auto mb-5" 
           />
         </div>
       </Block>
@@ -149,26 +149,31 @@ export const Grigory: React.FC = async () => {
           </div>
         </div>
       </Block>
-      {/* Highlight Section with Banner Image */}
       <Block>
         <span id="music_mixing" className='absolute top-[4px] lg:top-[-80px]' />
         <HeadingLarge level={2} className='px-12 sm:px-0'>Music Mixing/Mastering</HeadingLarge>
-        <div className="flex justify-center">
+        <div className="flex justify-center mb-5">
           <Image src="/assets/grigory/img/v35_41.png" alt="Mixing Demo Reel Banner" className="rounded-lg w-full max-w-4xl h-48 object-cover shadow-lg" />
         </div>
         <Heading level={2}>Mixing Demo Reel</Heading>
-        <SkillList>
-          <Skill heading='Skills'>
-            Studio Recording, Noise Reduction, Pitch Correction and vocal editing, Gain staging, Vocal and instrumental processing, Mastering.
-          </Skill>
-          <Skill heading='Tools'>
-            Pro Tools, Ableton Live, Logic Pro, Audacity, Izotope Rx, Melodyne
-          </Skill>
-          <Skill heading='Anything else?'>
-            I also have experience in podcast mixing, live audio engineering, songwriting and production, so don’t hesitate to contact me for any other requests connected with audio.
-          </Skill>
-        </SkillList>
-        <Image src="/assets/grigory/img/v4_20.png" alt="Mixing Console" className="rounded-lg w-full max-w-xl h-80 object-cover" />
+        <div className='flex flex-col md:flex-row gap-8 items-center mb-5'>
+          <SkillList className='mx-auto w-full md:max-w-[50%]'>
+            <Skill heading='Skills'>
+              Studio Recording, Noise Reduction, Pitch Correction and vocal editing, Gain staging, Vocal and instrumental processing, Mastering.
+            </Skill>
+            <Skill heading='Tools'>
+              Pro Tools, Ableton Live, Logic Pro, Audacity, Izotope Rx, Melodyne
+            </Skill>
+            <Skill heading='Anything else?'>
+              I also have experience in podcast mixing, live audio engineering, songwriting and production, so don’t hesitate to contact me for any other requests connected with audio.
+            </Skill>
+          </SkillList>
+          <Image 
+            src="/assets/grigory/img/v4_20.png" 
+            alt="Mixing Console" 
+            className="rounded-lg w-full md:max-w-[50%] h-80 object-cover mx-auto" 
+          />
+        </div>
       </Block>
       
       <div className='bg-[#EEE] pt-5 pb-8'>
