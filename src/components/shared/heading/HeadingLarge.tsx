@@ -18,7 +18,7 @@ const HeadingLarge: React.FC<HeadingLargeProps> = ({
       case 1:
         return 'text-4xl sm:text-5xl font-bold text-shadow text-center sm:text-left pb-4 lg:pb-8'
       case 2:
-        return 'text-2xl sm:text-4xl font-bold  text-center sm:text-left pb4 lg:pb-8'
+        return 'text-2xl sm:text-4xl font-bold  text-center sm:text-left pb-4 lg:pb-8'
       case 3:
         return 'text-xl sm:text-2xl  font-bold text-center sm:text-left pb-4 lg:pb-8'
       case 4:

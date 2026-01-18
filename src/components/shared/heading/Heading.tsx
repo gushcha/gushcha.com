@@ -20,7 +20,7 @@ const Heading: React.FC<HeadingProps> = ({
       case 3:
         return 'text-lg text-center sm:text-left pb-2'
       case 4:
-        return 'text-base text-center sm:text-left pb-2'
+        return 'text-base font-bold text-center sm:text-left pb-2'
       case 5:
         return 'text-sm text-center sm:text-left pb-2'
       case 6:

@@ -169,7 +169,7 @@ export const Grigory: React.FC = async () => {
             <li>
               <Heading level={4}>Anyting else?</Heading>
               <p>
-                I also have experience in podcast mixina. livel audio engineering, songwriting and production, so don&apos;t hesitate to contact me for any other requests connected with audio.
+                I also have experience in podcast mixing. live audio engineering, songwriting and production, so don&apos;t hesitate to contact me for any other requests connected with audio.
               </p>
             </li>
             <li>
@@ -182,43 +182,55 @@ export const Grigory: React.FC = async () => {
         <Image src="/assets/grigory/img/v4_20.png" alt="Mixing Console" className="rounded-lg w-full max-w-xl h-80 object-cover" />
       </Block>
       
-      
-      <section className="relative">
-        <span id="contacts" className='absolute top-[4px] lg:top-[-80px]' />
-        <HeadingLarge level={2} className="mb-8">Contacts</HeadingLarge>
-        <div>
-          <p className="text-lg font-semibold">+23123123123</p>
-          <p className="text-lg font-semibold">skjdalkdja@gmail.com</p>
-        </div>
-        <div className="flex gap-4">
-          <SocialIcon className="filter grayscale transition duration-300 ease-in-out hover:grayscale-0 hover:scale-105" url="https://facebook.com" />
-          <SocialIcon className="filter grayscale transition duration-300 ease-in-out hover:grayscale-0 hover:scale-105" url="https://linkedin.com" />
-          <SocialIcon className="filter grayscale transition duration-300 ease-in-out hover:grayscale-0 hover:scale-105" url="https://youtube.com" />
-          <SocialIcon className="filter grayscale transition duration-300 ease-in-out hover:grayscale-0 hover:scale-105" url="https://instagram.com" />
-        </div>
-      </section>
-
-      <section>
-        <div>Grigory Gushcha Portfolio site</div>
+      <div className='bg-[#EEE] pt-5 pb-8'>
+        <Block>
+          <span id="contacts" className='absolute top-[4px] lg:top-[-80px]' />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="flex md:w-full justify-self-center sm:justify-self-start col-span-full lg:col-span-1">
+              <HeadingLarge className="pt-4 lg:pt-8 " level={2}>Contacts</HeadingLarge>
+            </div>
+            <div className="py-4">
+              <div className="flex flex-col justify-center h-full">
+                <p className="text-lg font-semibold">+23123123123</p>
+                <p className="text-lg font-semibold">skjdalkdja@gmail.com</p>
+              </div>
+            </div>
+            <div className="flex justify-between items-center gap-8 lg:justify-self-end">
+              <SocialIcon className="filter grayscale transition duration-300 ease-in-out hover:grayscale-0 hover:scale-105" url="https://facebook.com" />
+              <SocialIcon className="filter grayscale transition duration-300 ease-in-out hover:grayscale-0 hover:scale-105" url="https://linkedin.com" />
+              <SocialIcon className="filter grayscale transition duration-300 ease-in-out hover:grayscale-0 hover:scale-105" url="https://youtube.com" />
+              <SocialIcon className="filter grayscale transition duration-300 ease-in-out hover:grayscale-0 hover:scale-105" url="https://instagram.com" />
+            </div>
+          </div>
+        </Block>
+      </div>
+      <Block className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[3fr_2fr_2fr_2fr] gap-8">
+        <Heading level={3} className='col-span-full lg:col-span-1'>Grigory Gushcha Portfolio&nbsp;Site</Heading>
         <div>
           <Heading level={4}>Services</Heading>
-          <span className="v1_940">Film Audio Post/Mixing</span>
-          <span className="v1_941">Location Sound</span>
-          <span className="v1_942">Music Mixing/Mastering</span>
+          <div className='flex flex-col text-center sm:text-left sm:gap-2'>
+            <a href="#film_audio_post_mixing">Film Audio Post/Mixing</a>
+            <a href="#location_sound">Location Sound</a>
+            <a href="#music_mixing">Music Mixing/Mastering</a>
+          </div>
         </div>
         <div>
           <Heading level={4}>More about me</Heading>
-          <span className="v1_945">My music</span>
-          <span className="v1_946">My Youtube Channel</span>
-          <span className="v1_947">The Mass Conceptual EP</span>
+          <div className='flex flex-col text-center sm:text-left sm:gap-2'>
+            <a href="#">My music</a>
+            <a href="#">My Youtube Channel</a>
+            <a href="#">The Mass Conceptual EP</a>
+          </div>
         </div>
         <div>
           <Heading level={4}>More of my work</Heading>
-          <span className="v1_950">Podcast KSJP</span>
-          <span className="v1_951">Laladevochka - Chasing Dreams</span>
-          <span className="v1_952">Home</span>
+          <div className='flex flex-col text-center sm:text-left sm:gap-2'>
+            <a href="#">Podcast KSJP</a>
+            <a href="#">Laladevochka - Chasing Dreams</a>
+            <a href="#">Home</a>
+          </div>
         </div>
-      </section>
+      </Block>
     </div>
   );
 };
