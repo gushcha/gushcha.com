@@ -41,6 +41,29 @@ const Navbar: FC = () => {
 
       {/* Mobile Navigation - Black Square */}
       <div className="lg:hidden fixed top-3 right-3 z-50" ref={dropdownRef}>
+
+        {/* Dropdown Menu */}
+        {isOpen && (
+          <div className="absolute top-13 right-0 bg-black shadow-lg rounded-xl py-2 w-56 text-white">
+            {links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="block px-4 py-2 hover:bg-gray-800 transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
+            <a
+              href="#contacts"
+              onClick={() => setIsOpen(false)}
+              className="block px-4 py-2 hover:bg-gray-800 transition-colors"
+            >
+              Contacts
+            </a>
+          </div>
+        )}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="flex items-center justify-center w-11 h-11 bg-black rounded-xl shadow-lg hover:opacity-80 transition-opacity"
@@ -56,25 +79,6 @@ const Navbar: FC = () => {
             </svg>
           )}
         </button>
-
-        {/* Dropdown Menu */}
-        {isOpen && (
-          <div className="absolute top-20 right-0 bg-white dark:bg-gray-800 shadow-lg rounded-md py-2 w-56">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
-            <div className="px-4 py-2 w-full">
-              <Button href="#contacts" className="w-full">Contacts</Button>
-            </div>
-          </div>
-        )}
       </div>
     </>
   )

@@ -56,9 +56,9 @@ export const Grigory: React.FC = async () => {
         </div>
         <div className='relative lg:mt-4'>
           <span id="about" className='absolute top-[-1000px] lg:top-[-80px]' />
-          <div className="flex flex-col md:flex-row gap-4 lg:gap-20 md:justify-between">
+          <HeadingLarge level={2}>About</HeadingLarge>
+          <div className="flex flex-col-reverse sm:flex-col md:flex-row gap-4 lg:gap-20 md:justify-between">
             <div className="flex flex-col gap-4 max-w-[900px]">
-              <HeadingLarge level={2}>About</HeadingLarge>
               <p className="text-slate-600">
                 Hello there! I am Grigory, an audio producer providing technical audio support for film crews and musicians. My goal is to eliminate any technical audio difficulties that can stand in the way of your creativity, as well as provide great sound for the stories that you aim to share.
               </p>
@@ -69,22 +69,30 @@ export const Grigory: React.FC = async () => {
                 Outside of work, I write music, play D&D, and collect video games.
               </p>
             </div>
-            <div className="flex min-w-72 max-w-92">
+            <div className="flex min-w-72 md:max-w-92 w-full max-h-90 md:max-h-auto">
               <Image src="/assets/grigory/img/about.jpg" alt="Grigory Gushcha" className="rounded-lg w-full object-cover" />
             </div>
           </div>
         </div>
+
       </Block>
 
       <Block separatorVariant={1}>
         <span id="film_audio_post_mixing" className='absolute top-[4px] lg:top-[-80px]' />
         <HeadingLarge level={2} className='px-14 sm:px-0'>Film Audio Post/Mixing</HeadingLarge>
-        <Image 
-          src="/assets/grigory/img/peaches.jpg" 
-          alt="Studio Session" 
-          className="rounded-lg w-full md:max-w-[50%] h-80 object-cover mx-auto mb-5" 
-        />
-        <SkillList className='mx-auto w-full md:max-w-[50%]'>
+        <div 
+          style={{padding:"56.25% 0 0 0", position:"relative",}}
+          className='max-w-[1000] mx-auto'
+        >
+          <iframe 
+            src="https://player.vimeo.com/video/1130924906?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"  
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+            referrerPolicy="strict-origin-when-cross-origin" 
+            className='absolute top-0 left-0 w-full h-full'
+            title="Grigory Gushcha Audio Post (Demo Reel)">
+          </iframe>
+        </div>
+        <SkillList className='mx-auto w-full md:max-w-[50%] mt-5'>
           <Skill heading='Skills'>
             Synchronisation, dialogue editing, noise reduction,sound restoration, sound design, vocal processing, Foley, mixing in stereo and surround (5.1) systems, managing a production team
           </Skill>
@@ -153,7 +161,12 @@ export const Grigory: React.FC = async () => {
         <span id="music_mixing" className='absolute top-[4px] lg:top-[-80px]' />
         <HeadingLarge level={2} className='px-12 sm:px-0'>Music Mixing/Mastering</HeadingLarge>
         <div className="flex justify-center mb-5">
-          <Image src="/assets/grigory/img/v35_41.png" alt="Mixing Demo Reel Banner" className="rounded-lg w-full max-w-4xl h-48 object-cover shadow-lg" />
+          <iframe 
+            width="100%" 
+            height="166" 
+            allow="autoplay" 
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2247229586&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+          </iframe>
         </div>
         <Heading level={2}>Mixing Demo Reel</Heading>
         <div className='flex flex-col md:flex-row gap-8 items-center mb-5'>
