@@ -185,15 +185,15 @@ export const Grigory: React.FC = async () => {
             </div>
             <div className="py-4">
               <div className="flex flex-col justify-center h-full">
-                <p className="text-lg font-semibold">+23123123123</p>
-                <p className="text-lg font-semibold">skjdalkdja@gmail.com</p>
+                <p className="text-lg font-semibold">+381612816804</p>
+                <p className="text-lg font-semibold">grigorygushcha@gmail.com</p>
               </div>
             </div>
             <div className="flex justify-between items-center gap-8 lg:justify-self-end">
-              <SocialIcon className="filter grayscale transition duration-300 ease-in-out hover:grayscale-0 hover:scale-105" url="https://facebook.com" />
-              <SocialIcon className="filter grayscale transition duration-300 ease-in-out hover:grayscale-0 hover:scale-105" url="https://linkedin.com" />
-              <SocialIcon className="filter grayscale transition duration-300 ease-in-out hover:grayscale-0 hover:scale-105" url="https://youtube.com" />
-              <SocialIcon className="filter grayscale transition duration-300 ease-in-out hover:grayscale-0 hover:scale-105" url="https://instagram.com" />
+              <SocialIcon className="filter grayscale transition duration-300 ease-in-out hover:grayscale-0 hover:scale-105" target="_blank" url="https://t.me/zhenasbezhala" />
+              <SocialIcon className="filter grayscale transition duration-300 ease-in-out hover:grayscale-0 hover:scale-105" target="_blank" url="https://www.linkedin.com/in/grigory-gushcha-877225395/" />
+              <SocialIcon className="filter grayscale transition duration-300 ease-in-out hover:grayscale-0 hover:scale-105" target="_blank" url="https://www.youtube.com/@gushchamusic" />
+              <SocialIcon className="filter grayscale transition duration-300 ease-in-out hover:grayscale-0 hover:scale-105" target="_blank" url="https://www.instagram.com/zhenasbezhala/" />
             </div>
           </div>
         </Block>
@@ -211,16 +211,15 @@ export const Grigory: React.FC = async () => {
         <div>
           <Heading level={4}>More about me</Heading>
           <div className='flex flex-col text-center sm:text-left sm:gap-2'>
-            <a href="#">My music</a>
-            <a href="#">My Youtube Channel</a>
-            <a href="#">The Mass Conceptual EP</a>
+            <a href="https://www.youtube.com/watch?v=wUY3L3uA7yY&list=RDwUY3L3uA7yY&start_radio=1">My music</a>
+            <a href="https://www.youtube.com/@gushchamusic">My Youtube Channel</a>
           </div>
         </div>
         <div>
           <Heading level={4}>More of my work</Heading>
           <div className='flex flex-col text-center sm:text-left sm:gap-2'>
-            <a href="#">Podcast KSJP</a>
-            <a href="#">Laladevochka - Chasing Dreams</a>
+            <a target="_blank" href="https://podcasts.apple.com/cd/podcast/kill-sarah-jessica-parker/id1761248669">Podcast KSJP</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=hL0kJTLS9H8&list=RDhL0kJTLS9H8&start_radio=1">Laladevochka - Chasing Dreams</a>
             <a href="#">Home</a>
           </div>
         </div>

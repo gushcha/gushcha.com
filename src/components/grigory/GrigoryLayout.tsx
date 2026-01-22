@@ -13,13 +13,16 @@ const inter = Inter({
   weight: '400'
 })
 
+const DESCRIPTION = "Film Audio Post/Mixing, Location Sound, " +
+"Music Mixing/Mastering. Audio producer providing technical audio support " + 
+"for film crews and musicians. Studio Recording, Synchronisation, " + 
+"dialogue editing, noise reduction,sound restoration, sound design, " + 
+"audio processing, Foley, mixing in stereo and surround (5.1) systems, mastering."
 
 export const generateGrigoryMetadata = async (_props: MetadataLayoutProps) => {
-  console.log('RENDERING Grigory METADATA')
-  const t = await getT('metadata')
   return {
-    title: t('metadata_title') + ' - Grigory',
-    description: 'Grigory page coming soon',
+    title: "Audio Production Grigory",
+    description: DESCRIPTION,
   }
 }
 
