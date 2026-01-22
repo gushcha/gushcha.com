@@ -33,21 +33,21 @@ export const Grigory: React.FC = async () => {
           <div className="grid sm:grid-cols-3 gap-8">
             <a href="#film_audio_post_mixing">
               <div className='transition-all duration-200 hover:translate-y-[-8px] hover:shadow-2xl rounded-lg p-2 -m-2'>
-                <Image enablePreview={false} src="/assets/grigory/img/v1_988.png" alt="Film Audio Post/Mixing" className="rounded-lg w-full h-64 object-cover mb-4" />
+                <Image enablePreview={false} src="/assets/grigory/img/home.jpg" alt="Film Audio Post/Mixing" className="rounded-lg w-full h-64 object-cover mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Film Audio Post/Mixing</h3>
                 <p className="text-gray-600">Professional Audio post-production for any media content.</p>
               </div>
             </a>
             <a href="#location_sound">
               <div className='transition-all duration-200 hover:translate-y-[-8px] hover:shadow-2xl rounded-lg p-2 -m-2'>
-                <Image enablePreview={false} src="/assets/grigory/img/v1_993.png" alt="Location Sound" className="rounded-lg w-full h-64 object-cover mb-4" />
+                <Image enablePreview={false} src="/assets/grigory/img/location.jpg" alt="Location Sound" className="rounded-lg w-full h-64 object-cover mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Location Sound</h3>
                 <p className="text-gray-600">Production Sound engineering for interviews, advertisements, feature films etc.</p>
               </div>
             </a>
             <a href="#music_mixing">
               <div className='transition-all duration-200 hover:translate-y-[-8px] hover:shadow-2xl rounded-lg p-2 -m-2'>
-                <Image enablePreview={false} src="/assets/grigory/img/v1_998.png" alt="Music Mixing/Mastering" className="rounded-lg w-full h-64 object-cover mb-4" />
+                <Image enablePreview={false} src="/assets/grigory/img/mixing.jpg" alt="Music Mixing/Mastering" className="rounded-lg w-full h-64 object-cover mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Music Mixing/Mastering</h3>
                 <p className="text-gray-600">Crafting professional, release-ready mixes and mastering them to the industry standards for any digital platform or other distribution option.</p>
               </div>
@@ -70,7 +70,7 @@ export const Grigory: React.FC = async () => {
               </p>
             </div>
             <div className="flex min-w-72 max-w-92">
-              <Image src="/assets/grigory/img/about.png" alt="Grigory Gushcha" className="rounded-lg w-full object-cover" />
+              <Image src="/assets/grigory/img/about.jpg" alt="Grigory Gushcha" className="rounded-lg w-full object-cover" />
             </div>
           </div>
         </div>
@@ -80,7 +80,7 @@ export const Grigory: React.FC = async () => {
         <span id="film_audio_post_mixing" className='absolute top-[4px] lg:top-[-80px]' />
         <HeadingLarge level={2} className='px-14 sm:px-0'>Film Audio Post/Mixing</HeadingLarge>
         <Image 
-          src="/assets/grigory/img/v4_86.png" 
+          src="/assets/grigory/img/peaches.jpg" 
           alt="Studio Session" 
           className="rounded-lg w-full md:max-w-[50%] h-80 object-cover mx-auto mb-5" 
         />
