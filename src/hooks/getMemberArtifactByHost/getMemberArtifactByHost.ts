@@ -24,6 +24,6 @@ export const getMemberArtifactByHost = async<T extends NonNullish> (
   const artifact = Object.entries(hostPrefixToArtefactMap)
     .find(([prefix]) => host.startsWith(`${prefix}.`))?.[1]
 
-  return artifact || hostPrefixToArtefactMap.family // Default to family if no match found
+  return artifact || hostPrefixToArtefactMap.denis // Default to family if no match found
 }
 

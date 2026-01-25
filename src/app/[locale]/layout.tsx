@@ -26,7 +26,7 @@ export const generateMetadata = async (
 const RootLayout: PageWithLocale<PropsWithChildren> = async ({ children, ...props}) => {
 
   const MemberLayout = await getMemberArtifactByHost({
-    'family': DenisLayout,
+    'family': FamilyLayout,
     'denis': DenisLayout,
     'grigory': GrigoryLayout,
   })

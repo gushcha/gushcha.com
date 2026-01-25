@@ -31,7 +31,7 @@ const GetInTouch: FC<{formClassName?: string}> = ({formClassName}) => {
           {/* <Contact type={ContactType.Telegram} value="https://t.me/ootconose">
             {tCv('telegram')}
           </Contact> */}
-          <Contact type={ContactType.Github} value="https://t.me/ootconose">
+          <Contact type={ContactType.Github} value="https://github.com/gushcha">
             {tCv('github')}
           </Contact>
           <Contact type={ContactType.LinkedIn} value="https://www.linkedin.com/in/denis-gushcha-442469295/">

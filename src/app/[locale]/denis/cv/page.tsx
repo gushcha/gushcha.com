@@ -65,7 +65,7 @@ const CvPage: PageWithLocale = async () => {
             </Contact>
           </p> */}
           <p>
-            <Contact type={ContactType.Github} value="https://t.me/ootconose">
+            <Contact type={ContactType.Github} value="https://github.com/gushcha">
               {t('github')}
             </Contact>
             <Contact type={ContactType.LinkedIn} value="https://www.linkedin.com/in/denis-gushcha-442469295/">

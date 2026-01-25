@@ -2,7 +2,7 @@ import { Member } from './members'
 
 const localesByParticularMember = {
   denis: ['en', 'ru', 'el'] as ['en', 'ru', 'el'],
-  grigory: ['en', 'ru'] as ['en', 'ru']
+  grigory: ['en'] as ['en']
 }
 
 export type Locale = typeof localesByParticularMember[
