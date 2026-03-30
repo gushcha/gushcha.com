@@ -40,7 +40,14 @@ function getRequestLocaleParams (req: NextRequest):RequestLocaleParams {
 function suggestLocale(req: NextRequest, availableLocales: Locale[]) {
   const headersObject = Object.fromEntries(req.headers.entries())
   const languages = new Negotiator({ headers: headersObject }).languages()
-  return match(languages, [...availableLocales], availableLocales[0])
+
+  const filteredLanguages = languages.filter(lang => lang !== '*')
+
+  if (filteredLanguages.length === 0) {
+    return availableLocales[0]
+  }
+
+  return match(filteredLanguages, [...availableLocales], availableLocales[0])
 }
 
 export function proxy(req: NextRequest) {
