@@ -40,17 +40,16 @@ const getOrFetchDictionary = async (
 export const getT = async (
   namespace: DictionaryNamespace,
   supportedLocales?: Locale[]) => {
-  
+
   const locale = chooseLocale(supportedLocales)
 
   if (!locale) {
     throw new Error(
-      'Locale is not set, is page, generateMetadata' 
+      'Locale is not set, is page, generateMetadata'
       + ' or layout wrapped `withLocalizationPage/Metadata`?'
     )
   }
 
-  console.log('Locale getT()', locale, namespace, supportedLocales)
   const dictionary = await getOrFetchDictionary(namespace, locale)
 
   return (...args: TParams) => tAbstract(dictionary, ...args)

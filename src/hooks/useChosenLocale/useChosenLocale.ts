@@ -1,15 +1,19 @@
 import { useParams } from 'next/navigation'
 
-import { Locale } from '@/constants/locales'
+import { Locale, localesByMember, DEFAULT_LOCALE } from '@/constants/locales'
+import { getMemberArtifactByHost } from '@/hooks/getMemberArtifactByHost/getMemberArtifactByHost'
 
 export const useChosenLocale = (
-  supportedLocales? :Locale[]
+  supportedLocales?: Locale[]
 ): Locale => {
   const { locale: routeLocale } = useParams<{ locale: Locale }>()
-  if(!supportedLocales) {
-    return routeLocale
+
+  const defaultLocale = getMemberArtifactByHost(localesByMember)?.[0] || DEFAULT_LOCALE
+
+  if (!supportedLocales) {
+    return routeLocale || defaultLocale
   }
-  return (supportedLocales).includes(routeLocale) 
+  return (supportedLocales).includes(routeLocale)
     ? routeLocale
-    : supportedLocales[0]
+    : defaultLocale
 }

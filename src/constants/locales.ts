@@ -1,8 +1,10 @@
 import { Member } from './members'
 
+export const DEFAULT_LOCALE = 'en' as const
+
 const localesByParticularMember = {
-  denis: ['en', 'ru', 'el'] as ['en', 'ru', 'el'],
-  grigory: ['en'] as ['en']
+  denis: [DEFAULT_LOCALE, 'ru', 'el'] as [typeof DEFAULT_LOCALE, 'ru', 'el'],
+  grigory: [DEFAULT_LOCALE] as [typeof DEFAULT_LOCALE]
 }
 
 export type Locale = typeof localesByParticularMember[

@@ -1,4 +1,4 @@
-import { getMemberArtifactByHost } from '@/hooks/getMemberArtifactByHost/getMemberArtifactByHost'
+import { getMemberArtifactByHostServer } from '@/hooks/getMemberArtifactByHost/getMemberArtifactByHostServer'
 import { BASE_URL } from '@/constants/baseUrl'
 import { BASE_PROTOCOL } from '@/constants/baseProtocol'
 import type { MetadataRoute } from 'next'
@@ -44,7 +44,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const host = headersList.get('host')
   const baseUrl = host ? `${BASE_PROTOCOL}://${host}` : BASE_URL
 
-  const memberSitemapConfig = await getMemberArtifactByHost<GenerateSitemapEntryParams>({
+  const memberSitemapConfig = await getMemberArtifactByHostServer<GenerateSitemapEntryParams>({
     'family': {
       routes: familyRoutes,
       locales: localesByMember.family,

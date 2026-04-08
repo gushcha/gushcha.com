@@ -22,7 +22,6 @@ const geistMono = Geist_Mono({
 })
 
 export const generateFamilyMetadata = async (_props: MetadataLayoutProps) => {
-  console.log('RENDERING Family METADATA')
   const t = await getT('metadata')
   return {
     title: t('metadata_title'),
@@ -32,13 +31,12 @@ export const generateFamilyMetadata = async (_props: MetadataLayoutProps) => {
 
 const FamilyLayout: PageWithLocale<PropsWithChildren> = async ({ children }) => {
   getLocale()
-  console.log('RENDERING Family LAYOUT')
   return (
     <html lang={getLocale()} suppressHydrationWarning>
       <Head>
         <ThemeAntiFlicker />
       </Head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased ${BACKGROUNDS.family} text-gray-900 dark:text-gray-100 transition-colors`}> 
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased ${BACKGROUNDS.family} text-gray-900 dark:text-gray-100 transition-colors`}>
         {children}
         <ThemeToggle />
       </body>

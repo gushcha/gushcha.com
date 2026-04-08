@@ -6,7 +6,7 @@ import FamilyLayout, { generateFamilyMetadata } from '@/components/family/Family
 import { Metadata } from 'next'
 import DenisLayout, { generateDenisMetadata } from '@/components/denis/DenisLayout'
 import GrigoryLayout, { generateGrigoryMetadata } from '@/components/grigory/GrigoryLayout'
-import { getMemberArtifactByHost } from '@/hooks/getMemberArtifactByHost/getMemberArtifactByHost'
+import { getMemberArtifactByHostServer } from '@/hooks/getMemberArtifactByHost/getMemberArtifactByHostServer'
 import { MetadataLayoutProps } from '@/types/MetadataProps'
 import '@/app/globals.css';
 
@@ -14,7 +14,7 @@ export const generateMetadata = async (
   props: MetadataLayoutProps
 ): Promise<Metadata> => {
 
-  const generateMemberMetadata = await getMemberArtifactByHost({
+  const generateMemberMetadata = await getMemberArtifactByHostServer({
     'family': generateDenisMetadata,
     'denis': generateDenisMetadata,
     'grigory': generateGrigoryMetadata,
@@ -25,7 +25,7 @@ export const generateMetadata = async (
 
 const RootLayout: PageWithLocale<PropsWithChildren> = async ({ children, ...props}) => {
 
-  const MemberLayout = await getMemberArtifactByHost({
+  const MemberLayout = await getMemberArtifactByHostServer({
     'family': FamilyLayout,
     'denis': DenisLayout,
     'grigory': GrigoryLayout,

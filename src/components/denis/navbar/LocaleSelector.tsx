@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import Dropdown from '@/components/shared/dropdown/Dropdown'
 import { Locale } from '@/constants/locales'
+import { useChosenLocale } from '@/hooks/useChosenLocale/useChosenLocale'
 
 type LocaleSelectorOption = {
   code: Locale,
@@ -23,7 +24,9 @@ const LocaleSelector = () => {
   const pathname = usePathname()
   const router = useRouter()
 
-  const currentLocale = pathname?.split('/')[1] || 'en'
+  const supportedLocaleCodes = locales.map(l => l.code)
+  const currentLocale = useChosenLocale(supportedLocaleCodes)
+
   const currentLocaleData = locales.find(
     l => l.code === currentLocale
   ) || locales[0]
@@ -32,7 +35,11 @@ const LocaleSelector = () => {
   )
 
   const handleLocaleChange = (newLocale: string) => {
-    const pathWithoutLocale = pathname?.replace(/^\/[a-z]{2}/, '') || ''
+    let pathWithoutLocale = pathname || ''
+    if (pathWithoutLocale.startsWith(`/${currentLocale}/`) || pathWithoutLocale === `/${currentLocale}`) {
+      pathWithoutLocale = pathWithoutLocale.slice(currentLocale.length + 1)
+    }
+
     router.push(`/${newLocale}${pathWithoutLocale}`)
     setIsOpen(false)
   }

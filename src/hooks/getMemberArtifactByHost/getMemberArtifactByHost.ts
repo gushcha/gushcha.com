@@ -1,29 +1,30 @@
-'use server'
-
-import { headers } from 'next/headers'
-
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 type NonNullish = {}
 
-type HostPrefixToArtefactMap<T extends NonNullish> = {
+export type HostPrefixToArtefactMap<T extends NonNullish> = {
   family: T
   denis: T
   grigory: T
 }
+
 /**
  * Determines the member artifact based on the host prefix.
  * example: if the host is "family.gushcha.com", it will return the artifact for "family".
- * @param hostPrefixToArtefactMap 
+ * @param hostPrefixToArtefactMap Map of host prefixes to artifacts
+ * @param host Optional explicit host string, if not provided will attempt to read window.location.host
  * @returns artifact based on the host prefix, family artefact for default.
  */
-export const getMemberArtifactByHost = async<T extends NonNullish> (
-  hostPrefixToArtefactMap: HostPrefixToArtefactMap<T>
-):Promise<T> => {
-  const headersList = await headers()
-  const host = headersList.get('host') || ''
+export const getMemberArtifactByHost = <T extends NonNullish>(
+  hostPrefixToArtefactMap: HostPrefixToArtefactMap<T>,
+  host?: string
+): T => {
+  let activeHost = host || ''
+  
+  if (!activeHost && typeof window !== 'undefined') {
+    activeHost = window.location.host
+  }
+
   const artifact = Object.entries(hostPrefixToArtefactMap)
-    .find(([prefix]) => host.startsWith(`${prefix}.`))?.[1]
+    .find(([prefix]) => activeHost.startsWith(`${prefix}.`))?.[1]
 
   return artifact || hostPrefixToArtefactMap.denis // Default to family if no match found
 }
-

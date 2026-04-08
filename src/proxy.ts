@@ -1,6 +1,6 @@
 import { match } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
-import { NextResponse, NextRequest } from 'next/server'
+import { NextResponse, NextRequest, userAgent } from 'next/server'
 
 import { MEMBERS, type Member } from './constants/members'
 import { allLocales, localesByMember, type Locale } from './constants/locales'
@@ -19,20 +19,19 @@ const hostMemberMatcher = new RegExp(
   `^${MEMBERS.join('|')}(?=\.)`
 )
 
-function getRequestLocaleParams (req: NextRequest):RequestLocaleParams {
-  const [,,
+function getRequestLocaleParams(req: NextRequest): RequestLocaleParams {
+  const [, ,
     reqLocale,
-    reqPathNameWithoutLocale,,
+    reqPathNameWithoutLocale, ,
     reqMember,
   ] = req.nextUrl.pathname.match(localeParamsMatcher) || []
   const [
     hostMember
   ] = (req.headers.get('Host') || '').match(hostMemberMatcher) || []
 
-  console.warn('localeParamsMatcher', localeParamsMatcher)
   return {
     locale: reqLocale as Locale | undefined,
-    member: (reqMember ?? hostMember) as Member | undefined, 
+    member: (reqMember ?? hostMember) as Member | undefined,
     pathNameWithoutLocale: reqPathNameWithoutLocale ?? ''
   }
 }
@@ -51,20 +50,29 @@ function suggestLocale(req: NextRequest, availableLocales: Locale[]) {
 }
 
 export function proxy(req: NextRequest) {
-  console.debug('-------------------')
-  console.warn(req.nextUrl.pathname)
-  const {locale, member, pathNameWithoutLocale} = getRequestLocaleParams(req)
+
+  const { locale, member, pathNameWithoutLocale } = getRequestLocaleParams(req)
   const availableLocales = localesByMember[member ?? 'family']
-  console.info('PARAMS',{locale, member, pathNameWithoutLocale, availableLocales})
+
+  req.headers.set('x-request-pathname', pathNameWithoutLocale)
 
   if (locale && availableLocales.includes(locale)) {
-    console.warn('PASS', req.nextUrl.pathname)
-    return
+    return NextResponse.next({
+      request: { headers: req.headers }
+    })
+  }
+
+  const { isBot } = userAgent(req)
+
+  if (isBot) {
+    req.nextUrl.pathname = `/${availableLocales[0]}${pathNameWithoutLocale}`
+    return NextResponse.rewrite(req.nextUrl, {
+      request: { headers: req.headers }
+    })
   }
 
   const suggestedLocale = suggestLocale(req, availableLocales)
   req.nextUrl.pathname = `/${suggestedLocale}${pathNameWithoutLocale}`
-  console.warn('REDIRECT TO', req.nextUrl.pathname)
   return NextResponse.redirect(req.nextUrl)
 }
 
