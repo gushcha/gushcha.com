@@ -6,6 +6,7 @@ import Heading from '@/components/shared/heading/Heading'
 import HeadingLarge from '@/components/shared/heading/HeadingLarge'
 import Image from '@/components/shared/image/Image'
 import { SocialIcon } from 'react-social-icons'
+import '@/components/shared/socialIcons/registerImdbIcon'
 import Skill from '@/components/grigory/skillList/Skill'
 import SkillList from '@/components/grigory/skillList/SkillList'
 
@@ -31,21 +32,21 @@ export const Grigory: React.FC = async () => {
         <div className='hidden lg:block'>
           <HeadingLarge level={2}>Services</HeadingLarge>
           <div className="grid sm:grid-cols-3 gap-8">
-            <a href="#film_audio_post_mixing">
+            <a href="#film_audio_post_mixing" className="no-underline">
               <div className='transition-all duration-200 hover:translate-y-[-8px] hover:shadow-2xl rounded-lg p-2 -m-2'>
                 <Image enablePreview={false} src="/assets/grigory/img/home.jpg" alt="Film Audio Post/Mixing" className="rounded-lg w-full h-64 object-cover mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Film Audio Post/Mixing</h3>
                 <p className="text-gray-600">Professional Audio post-production for any media content.</p>
               </div>
             </a>
-            <a href="#location_sound">
+            <a href="#location_sound" className="no-underline">
               <div className='transition-all duration-200 hover:translate-y-[-8px] hover:shadow-2xl rounded-lg p-2 -m-2'>
                 <Image enablePreview={false} src="/assets/grigory/img/location.jpg" alt="Location Sound" className="rounded-lg w-full h-64 object-cover mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Location Sound</h3>
                 <p className="text-gray-600">Production Sound engineering for interviews, advertisements, feature films etc.</p>
               </div>
             </a>
-            <a href="#music_mixing">
+            <a href="#music_mixing" className="no-underline">
               <div className='transition-all duration-200 hover:translate-y-[-8px] hover:shadow-2xl rounded-lg p-2 -m-2'>
                 <Image enablePreview={false} src="/assets/grigory/img/mixing.jpg" alt="Music Mixing/Mastering" className="rounded-lg w-full h-64 object-cover mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Music Mixing/Mastering</h3>
@@ -110,6 +111,22 @@ export const Grigory: React.FC = async () => {
         <HeadingLarge level={2}>Location Sound</HeadingLarge>
         <div className='flex flex-col md:flex-row gap-8 items-center'>
           <SkillList className='md:max-w-[50%]'>
+            <Skill heading='TV Projects'>
+              <div>
+                <a 
+                  href="https://youtu.be/Y4oC-MLvUgk?si=xLAGY_AKLlXJ1Cdi"
+                  target="_blank" 
+                >
+                  Modni Salon Karavan (2026)
+                </a>
+              </div>
+              <div>
+                <a 
+                  href="https://www.euronews.rs/kultura/aktuelno-iz-kulture/242119/pocelo-snimanje-serije-price-iz-majstorske-radionice-2/vest"
+                  target="_blank" 
+                >Priče iz majstorske radionice 2 (2026)</a>
+              </div>
+            </Skill>
             <Skill heading='Location'>
               Currently in Belgrade, Serbia. Ready to travel for bigger projects.
             </Skill>
@@ -146,7 +163,7 @@ export const Grigory: React.FC = async () => {
               <img src="/assets/grigory/img/v1_890.jpeg" alt="Lavalier Microphone Icon" className="w-8 h-8" />
               <h4 className="text-lg font-semibold">Lavalier Microphone</h4>
             </div>
-            <p className="text-slate-600">DPA 4060</p>
+            <p className="text-slate-600">DPA 4060, Sennheiser EW G4</p>
           </div>
           <div className='md:self-end'>
             <div className="flex items-center gap-4 mb-2">
@@ -202,11 +219,12 @@ export const Grigory: React.FC = async () => {
                 <p className="text-lg font-semibold">grigorygushcha@gmail.com</p>
               </div>
             </div>
-            <div className="flex justify-between items-center gap-8 lg:justify-self-end">
+            <div className="flex justify-between items-center gap-2 lg:justify-self-end">
               <SocialIcon className="filter grayscale transition duration-300 ease-in-out hover:grayscale-0 hover:scale-105" target="_blank" url="https://t.me/zhenasbezhala" />
               <SocialIcon className="filter grayscale transition duration-300 ease-in-out hover:grayscale-0 hover:scale-105" target="_blank" url="https://www.linkedin.com/in/grigory-gushcha-877225395/" />
               <SocialIcon className="filter grayscale transition duration-300 ease-in-out hover:grayscale-0 hover:scale-105" target="_blank" url="https://www.youtube.com/@gushchamusic" />
               <SocialIcon className="filter grayscale transition duration-300 ease-in-out hover:grayscale-0 hover:scale-105" target="_blank" url="https://www.instagram.com/zhenasbezhala/" />
+              <SocialIcon className="filter grayscale transition duration-300 ease-in-out hover:grayscale-0 hover:scale-105" target="_blank" url="https://www.imdb.com/name/nm18821160" fgColor="#000" />
             </div>
           </div>
         </Block>

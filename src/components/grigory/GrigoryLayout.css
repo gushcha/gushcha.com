@@ -6,6 +6,11 @@
   transition: color 0.2s ease;
 }
 
+.grigory-layout a:not(header a, .no-underline) {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .grigory-layout a:hover {
   color: #b95b03;
 }

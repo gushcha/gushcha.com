@@ -28,7 +28,7 @@ const Navbar: FC = () => {
   ];
 
   return (
-    <>
+    <header>
       {/* Desktop Navigation */}
       <nav className="hidden lg:flex fixed top-0 left-0 right-0 h-20 z-50 items-center gap-4 justify-end px-4 bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm">
         {links.map((link) => (
@@ -80,7 +80,7 @@ const Navbar: FC = () => {
           )}
         </button>
       </div>
-    </>
+    </header>
   )
 }
 
